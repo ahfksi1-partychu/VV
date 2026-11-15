@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 행 전체 클릭(실행)이 버튼과 함께 동작하도록 하위 포커스를 막는다 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:gravity="center_vertical"
+    android:minHeight="96dp"
+    android:orientation="horizontal"
+    android:paddingVertical="8dp">
+
+    <ImageView
+        android:id="@+id/appIcon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:importantForAccessibility="no"
+        android:scaleType="fitCenter" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/appName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="26sp" />
+
+        <TextView
+            android:id="@+id/appDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.65"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/moveUp"
+        style="@style/RowButton"
+        android:contentDescription="@string/move_up"
+        android:text="▲" />
+
+    <Button
+        android:id="@+id/moveDown"
+        style="@style/RowButton"
+        android:contentDescription="@string/move_down"
+        android:text="▼" />
+
+    <Button
+        android:id="@+id/editAlias"
+        style="@style/RowButton"
+        android:text="@string/alias" />
+
+    <Button
+        android:id="@+id/remove"
+        style="@style/RowButton"
+        android:text="@string/remove" />
+</LinearLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 차량에 남긴 물건 한 줄: 이름, 자리·등록 시각·연결된 주차, [가져왔어요] [알림 끄기] [수정] [삭제] (DriveTodoActivity) -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:background="@drawable/phone_card"
+    android:orientation="vertical"
+    android:paddingHorizontal="12dp"
+    android:paddingVertical="10dp">
+
+    <TextView
+        android:id="@+id/carItemName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/phone_text"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/carItemMeta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/phone_text_hint"
+        android:textSize="13sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/carItemRetrieved"
+            style="@style/SettingsRowButton" />
+
+        <Button
+            android:id="@+id/carItemRemind"
+            style="@style/SettingsRowButton" />
+
+        <Button
+            android:id="@+id/carItemEdit"
+            style="@style/SettingsRowButton"
+            android:text="@string/drive_edit" />
+
+        <Button
+            android:id="@+id/carItemDelete"
+            style="@style/SettingsRowButton"
+            android:text="@string/drive_delete" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="32dp"
+    android:paddingTop="24dp"
+    android:paddingBottom="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/app_name"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <!-- 차량용: 휴대폰과 동기화 (CarDriveSetup이 연결, 주행 중에는 화면이 열리지 않음) -->
+        <Button
+            android:id="@+id/carSyncButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:minWidth="200dp"
+            android:minHeight="@dimen/touch_target"
+            android:text="@string/sync_car_button"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/addAppButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="200dp"
+            android:minHeight="@dimen/touch_target"
+            android:text="@string/add_app"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/drivingBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="#33FFB300"
+        android:padding="12dp"
+        android:text="@string/driving_banner"
+        android:textSize="20sp"
+        android:visibility="gone" />
+
+    <!-- 음성 호출어 상태 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#1AFFFFFF"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/voiceTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/voice_title"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/voiceStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.8"
+                android:textSize="19sp" />
+
+            <!-- 시스템 음성 인식(서버 사용 가능)을 허용한 경우에만 표시. 누르면 허용 해제 -->
+            <TextView
+                android:id="@+id/voiceSystemStt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:gravity="center_vertical"
+                android:text="@string/voice_system_stt_allowed"
+                android:textColor="#FFFFB300"
+                android:textSize="19sp"
+                android:visibility="gone" />
+
+            <!-- 메시지 읽기·답장 알림 접근 상태 (지원하는 플랫폼에서만 표시). 누르면 안내 후 설정으로 -->
+            <TextView
+                android:id="@+id/voiceMessages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:gravity="center_vertical"
+                android:textSize="19sp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- 개발 빌드에서만 표시 (측정 화면은 src/debug 에만 있음) -->
+        <Button
+            android:id="@+id/voiceMeasureButton"
+            style="@style/RowButton"
+            android:text="@string/voice_measure"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/voiceCommandButton"
+            style="@style/RowButton"
+            android:text="@string/voice_command" />
+
+        <Button
+            android:id="@+id/voiceListenButton"
+            style="@style/RowButton" />
+
+        <Button
+            android:id="@+id/voiceSetupButton"
+            style="@style/RowButton" />
+
+        <Button
+            android:id="@+id/voiceDeleteButton"
+            style="@style/RowButton"
+            android:text="@string/voice_delete" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/my_apps"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ListView
+            android:id="@+id/favoritesList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="#22FFFFFF"
+            android:dividerHeight="1dp" />
+
+        <LinearLayout
+            android:id="@+id/emptyView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/empty_title"
+                android:textSize="26sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:alpha="0.7"
+                android:text="@string/empty_hint"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/emptyAddButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:minWidth="200dp"
+                android:minHeight="@dimen/touch_target"
+                android:text="@string/add_app"
+                android:textSize="24sp" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:alpha="0.8"
+        android:minHeight="32dp"
+        android:textSize="20sp" />
+</LinearLayout>

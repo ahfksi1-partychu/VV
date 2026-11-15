@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    차량용(car) 빌드에만 병합되는 선언: Drive To-Do 주차 위치 자동 저장.
+    폰 빌드에는 포함되지 않는다.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 기어(GEAR_SELECTION·CURRENT_GEAR)·시동(IGNITION_STATE)·주차 브레이크(PARKING_BRAKE_ON) 읽기 (일반 권한) -->
+    <uses-permission android:name="android.car.permission.CAR_POWERTRAIN" />
+
+    <!-- 주차 위치: 사용자가 허용한 경우에만, 차량 안에만 저장 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application>
+        <!-- 차량 신호로 주차 감지 → 위치 저장 (위치 사용 포그라운드 서비스) -->
+        <service
+            android:name=".car.CarParkingService"
+            android:exported="false"
+            android:foregroundServiceType="location" />
+
+        <!-- 부팅 후 위치 권한이 있으면 주차 감시를 다시 시작 -->
+        <receiver
+            android:name=".car.CarDriveSetup$BootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

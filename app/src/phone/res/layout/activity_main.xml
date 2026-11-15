@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    폰 테스트용 메인 화면 (세로, 일반 사용자용 음성비서 화면). main/res/layout/activity_main.xml 을 덮어쓴다.
+    차량용은 main 그대로. id와 뷰 종류는 main과 같아야 한다 (MainActivity가 그대로 사용).
+    - phone* id는 폰 빌드의 PhoneMainScreen이 채운다 (호출어 이름, 실제 듣기 상태, 안내, 설정).
+    - 재등록·삭제·듣기 버튼과 즐겨찾기는 숨긴 묶음 안에 둔다. MainActivity가 버튼을 VISIBLE로 바꿔도
+      부모가 숨겨져 있어 보이지 않는다. 기능은 설정 화면으로 옮겼고, 즐겨찾기는 설정에서 다시 표시할 수 있다.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/phone_bg"
+    android:orientation="vertical">
+
+    <!-- 상단: 로고 + 설정 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="8dp">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:contentDescription="@null"
+            android:src="@mipmap/ic_launcher_phone" />
+
+        <TextView
+            android:id="@+id/voiceTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:text="@string/phone_brand"
+            android:textColor="@color/phone_text"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/phoneSettingsButton"
+            android:layout_width="@dimen/touch_target"
+            android:layout_height="@dimen/touch_target"
+            android:background="@drawable/phone_icon_button"
+            android:contentDescription="@string/phone_settings"
+            android:padding="12dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_phone_settings" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/drivingBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="8dp"
+        android:background="#33FFB300"
+        android:padding="10dp"
+        android:text="@string/driving_banner"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingBottom="16dp">
+
+            <!--
+                가장 최근 주차 기록 (PhoneMainScreen). 기록이 있을 때만 보인다.
+                구역 메모 > 주소 순으로 크게, 사진이 있으면 오른쪽, 위치가 없으면 지도 버튼 없음.
+            -->
+            <LinearLayout
+                android:id="@+id/phoneParkingCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/phone_card"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/parking_card_label"
+                    android:textColor="@color/phone_accent"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/phoneParkingWhere"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/phone_text"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/phoneParkingPlace"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:textColor="@color/phone_text_secondary"
+                            android:textSize="14sp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/phoneParkingTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:textColor="@color/phone_text_secondary"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/phoneParkingPhoto"
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
+                        android:layout_marginStart="12dp"
+                        android:contentDescription="@string/parking_card_photo_desc"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/phoneParkingSync"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:textColor="@color/phone_text_hint"
+                    android:textSize="12sp" />
+
+                <!-- 아직 답하지 않은 '주차 위치를 기록하시겠습니까?' (ParkingPrompt) -->
+                <LinearLayout
+                    android:id="@+id/phoneParkingPrompt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/parking_prompt_title"
+                        android:textColor="@color/phone_accent"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/phoneParkingPromptText"
+                            style="@style/SettingsRowButton"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_marginStart="0dp"
+                            android:text="@string/parking_prompt_text" />
+
+                        <Button
+                            android:id="@+id/phoneParkingPromptPhoto"
+                            style="@style/SettingsRowButton"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="@string/parking_prompt_photo" />
+
+                        <Button
+                            android:id="@+id/phoneParkingPromptSkip"
+                            style="@style/SettingsRowButton"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="@string/parking_prompt_skip" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- 지도에서 보기(위치가 있을 때만) · 위치 수정 · 사진 변경 -->
+                <LinearLayout
+                    android:id="@+id/phoneParkingActions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/phoneParkingMap"
+                        style="@style/SettingsRowButton"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="0dp"
+                        android:text="@string/parking_card_map" />
+
+                    <Button
+                        android:id="@+id/phoneParkingEdit"
+                        style="@style/SettingsRowButton"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/parking_card_edit" />
+
+                    <Button
+                        android:id="@+id/phoneParkingPhotoButton"
+                        style="@style/SettingsRowButton"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/parking_card_photo_change" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 소개 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/phone_tagline"
+                android:textColor="@color/phone_text"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:lineSpacingExtra="3dp"
+                android:text="@string/phone_description"
+                android:textColor="@color/phone_text_secondary"
+                android:textSize="15sp" />
+
+            <!-- 호출어와 실제 듣기 상태 -->
+            <FrameLayout
+                android:id="@+id/phoneMicCircle"
+                android:layout_width="112dp"
+                android:layout_height="112dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/phone_mic_circle">
+
+                <ImageView
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_phone_mic" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/phoneWakeName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:textColor="@color/phone_text"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/phoneWakeState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:textColor="@color/phone_text_secondary"
+                android:textSize="15sp" />
+
+            <!-- MainActivity가 채우는 상세 상태. 위 두 줄이 대신 보여 주므로 숨긴다 -->
+            <TextView
+                android:id="@+id/voiceStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/voiceCommandButton"
+                style="@style/PhoneAccentButton"
+                android:layout_marginTop="20dp"
+                android:text="@string/phone_voice_command" />
+
+            <!-- 듣기가 꺼졌거나 권한이 없을 때: 바로 켜기 (PhoneMainScreen) -->
+            <Button
+                android:id="@+id/phoneEnableButton"
+                style="@style/PhoneAccentButton"
+                android:layout_marginTop="10dp"
+                android:text="@string/phone_enable_listening"
+                android:visibility="gone" />
+
+            <!-- 호출어가 없을 때만 (PhoneMainScreen) -->
+            <Button
+                android:id="@+id/phoneRegisterButton"
+                style="@style/PhoneOutlineButton"
+                android:layout_marginTop="10dp"
+                android:text="@string/voice_register"
+                android:visibility="gone" />
+
+            <!-- 백그라운드 호출이 꺼져 있을 때 안내 (누르면 설정) -->
+            <TextView
+                android:id="@+id/phoneBackgroundHint"
+                style="@style/PhoneHintRow"
+                android:layout_marginTop="12dp"
+                android:text="@string/phone_background_hint"
+                android:visibility="gone" />
+
+            <!-- Drive To-Do: 마지막 주차 위치 확인하기·할 일 (PhoneMainScreen) -->
+            <Button
+                android:id="@+id/phoneDriveTodoButton"
+                style="@style/PhoneOutlineButton"
+                android:layout_marginTop="12dp"
+                android:text="@string/drive_open_button" />
+
+            <!-- 시스템 음성 인식(서버 사용 가능)을 허용한 경우에만 표시. 누르면 허용 해제 -->
+            <TextView
+                android:id="@+id/voiceSystemStt"
+                style="@style/PhoneHintRow"
+                android:layout_marginTop="8dp"
+                android:text="@string/voice_system_stt_allowed"
+                android:visibility="gone" />
+
+            <!-- 메시지 읽기·답장 알림 접근 상태 (지원하는 플랫폼에서만 표시). 누르면 안내 후 설정으로 -->
+            <TextView
+                android:id="@+id/voiceMessages"
+                style="@style/PhoneHintRow"
+                android:layout_marginTop="8dp"
+                android:visibility="gone" />
+
+            <!-- 이렇게 말해보세요: 실제로 동작하는 명령만 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/phone_examples_title"
+                android:textColor="@color/phone_text"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/PhoneExample"
+                android:text="@string/phone_example_kakao" />
+
+            <TextView
+                style="@style/PhoneExample"
+                android:text="@string/phone_example_youtube" />
+
+            <TextView
+                android:id="@+id/phoneExampleMessages"
+                style="@style/PhoneExample"
+                android:text="@string/phone_example_messages" />
+
+            <TextView
+                style="@style/PhoneExample"
+                android:text="@string/phone_example_parking" />
+
+            <TextView
+                style="@style/PhoneExample"
+                android:text="@string/phone_example_todo" />
+
+            <!-- 설정으로 옮긴 버튼 (항상 숨김) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/voiceListenButton"
+                    style="@style/PortraitButton" />
+
+                <Button
+                    android:id="@+id/voiceSetupButton"
+                    style="@style/PortraitButton" />
+
+                <Button
+                    android:id="@+id/voiceDeleteButton"
+                    style="@style/PortraitButton"
+                    android:text="@string/voice_delete" />
+
+                <Button
+                    android:id="@+id/voiceMeasureButton"
+                    style="@style/PortraitButton"
+                    android:text="@string/voice_measure"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/phone_footer_notice"
+                android:textColor="@color/phone_text_hint"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 즐겨찾기 앱: 기본 숨김. 설정의 '메인 화면에 내 앱 표시'를 켜면 보인다 (데이터는 그대로 보존) -->
+    <LinearLayout
+        android:id="@+id/phoneFavoritesSection"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/my_apps"
+                android:textColor="@color/phone_text"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/addAppButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="96dp"
+                android:minHeight="@dimen/touch_target"
+                android:text="@string/add_app"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ListView
+                android:id="@+id/favoritesList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="#22FFFFFF"
+                android:dividerHeight="1dp" />
+
+            <LinearLayout
+                android:id="@+id/emptyView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/empty_title"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:alpha="0.7"
+                    android:gravity="center"
+                    android:text="@string/empty_hint"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/emptyAddButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:minWidth="160dp"
+                    android:minHeight="@dimen/touch_target"
+                    android:text="@string/add_app"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- 즐겨찾기 작업 결과 (MainActivity). 즐겨찾기를 숨기면 함께 숨는다 (알림 메시지는 따로 뜸) -->
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.8"
+            android:minHeight="24dp"
+            android:textSize="14sp" />
+    </LinearLayout>
+</LinearLayout>

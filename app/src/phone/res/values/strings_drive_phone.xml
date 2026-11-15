@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Drive To-Do (폰 빌드 화면·알림) -->
+<resources>
+    <string name="drive_title">Drive To-Do</string>
+    <string name="drive_open_button">Drive To-Do · 주차 위치와 할 일</string>
+    <string name="phone_example_parking">\"차 어디 세웠지?\"</string>
+    <string name="phone_example_todo">\"집에 가서 택배 확인해야 해\"</string>
+
+    <!-- 주차 위치 -->
+    <string name="drive_parking_check">마지막 주차 위치 확인하기</string>
+    <string name="drive_parking_card_none">아직 저장된 주차 위치가 없어요.</string>
+    <string name="drive_parking_card_setup">아래 설정에서 차량 블루투스를 고르면 차에서 내릴 때 자동으로 저장돼요. 지금 위치를 직접 저장할 수도 있어요.</string>
+    <string name="drive_parking_card_waiting">차량 블루투스 연결이 끊기면 자동으로 저장돼요. 지금 위치를 직접 저장할 수도 있어요.</string>
+    <string name="drive_parking_coords">주소를 확인하지 못한 위치 (%1$.5f, %2$.5f)</string>
+    <string name="drive_parking_meta">%1$s 저장 · %2$s %3$s</string>
+    <string name="drive_parking_accuracy_meta">· 오차 약 %1$dm</string>
+    <string name="drive_source_car_signal">차량 신호(기어 P·시동 꺼짐)</string>
+    <string name="drive_source_phone_bluetooth">차량 블루투스 연결 끊김</string>
+    <string name="drive_source_manual">직접 저장</string>
+    <string name="drive_parking_map">지도에서 보기</string>
+    <string name="drive_parking_directions">걸어서 길찾기</string>
+    <string name="drive_parking_save_here">지금 위치를 주차 위치로 저장</string>
+    <string name="drive_parking_delete">주차 위치 삭제</string>
+    <string name="drive_parking_delete_confirm">저장된 주차 위치를 삭제할까요?</string>
+    <string name="drive_parking_dialog_none">아직 저장된 주차 위치가 없어요. 위치를 얻지 못한 경우에는 임의의 위치를 보여주지 않아요.</string>
+    <string name="drive_parking_label">마지막 주차 위치</string>
+    <string name="drive_parking_map_short">지도</string>
+    <string name="drive_parking_walk_short">길찾기</string>
+    <string name="drive_parking_save_short">여기 저장</string>
+    <string name="drive_parking_auto_failed">%1$s 자동 저장에 실패했어요. 위에 보이는 것은 그 전에 저장한 위치예요.</string>
+    <string name="drive_parking_auto_failed_none">%1$s 자동 저장에 실패했어요 (위치를 얻지 못함).</string>
+    <string name="drive_parking_inaccurate">오차가 커서 정확하지 않을 수 있어요. 차 근처라면 [여기 저장]으로 다시 저장하세요.</string>
+    <string name="drive_locating">위치를 확인하는 중…</string>
+    <string name="drive_no_map_app">이 링크를 열 지도 앱이 없어요.</string>
+    <string name="drive_sync_off">차량과 동기화 안 됨: 여기에는 이 휴대폰에서 저장한 것만 보여요.</string>
+    <string name="drive_sync_on">차량과 동기화됨 · %1$s</string>
+    <string name="drive_sync_on_error">차량과 동기화됨 · 마지막 시도 실패 (자동 재시도)</string>
+    <string name="drive_sync_on_never">차량과 동기화됨 · 아직 동기화 전</string>
+    <string name="drive_clear_confirm_synced">차량과 동기화 중이라 지운 할 일·물건 기록·주차 위치는 차량에서도 지워져요.</string>
+
+    <!-- 할 일 -->
+    <string name="drive_todo_header">할 일 %1$d개</string>
+    <string name="drive_todo_empty">할 일이 없어요. 음성으로 \"집에 가서 택배 확인해야 해\"처럼 말하거나 [추가]를 누르세요.</string>
+    <string name="drive_add">추가</string>
+    <string name="drive_open">열기</string>
+    <string name="drive_edit">수정</string>
+    <string name="drive_delete">삭제</string>
+    <string name="drive_save">저장</string>
+    <string name="drive_cancel">취소</string>
+    <string name="drive_close">닫기</string>
+    <string name="drive_agree">동의하고 켜기</string>
+    <string name="drive_allow">허용</string>
+    <string name="drive_meta_due">기한 %1$s</string>
+    <string name="drive_meta_place">%1$s에 가면</string>
+    <string name="drive_source_voice_car">차량 음성 메모</string>
+    <string name="drive_source_voice_phone">음성 메모</string>
+    <string name="drive_source_sms">문자 알림</string>
+    <string name="drive_source_kakao">카카오톡 알림</string>
+    <string name="drive_source_manual_todo">직접 추가</string>
+    <string name="drive_add_title">할 일 추가</string>
+    <string name="drive_edit_title">할 일 수정</string>
+    <string name="drive_edit_title_hint">할 일 (예: 택배 확인하기)</string>
+    <string name="drive_edit_title_empty">할 일을 입력해 주세요.</string>
+    <string name="drive_edit_due">기한: %1$s (바꾸기)</string>
+    <string name="drive_edit_no_due">기한 정하기</string>
+    <string name="drive_edit_clear_due">기한 없애기</string>
+    <string name="drive_edit_place">장소 조건</string>
+    <string name="drive_edit_no_place">없음</string>
+    <string name="drive_open_failed">관련 알림이 이미 사라져서 열 수 없어요.</string>
+
+    <!-- 후보 -->
+    <string name="drive_candidates">알림에서 찾은 할 일 후보</string>
+    <string name="drive_candidate_row">%1$s\n%2$s</string>
+    <string name="drive_candidate_accept">추가</string>
+    <string name="drive_candidate_dismiss">무시</string>
+    <string name="drive_candidates_off">꺼져 있어요. 아래 설정에서 켜면 문자·카카오톡 알림 중 택배 도착, 일정 변경, 답장이 필요한 질문만 후보로 보여드려요.</string>
+    <string name="drive_candidates_empty">새 후보가 없어요.</string>
+    <string name="drive_candidates_hint">[추가]를 눌러야 할 일이 돼요. 줄을 누르면 관련 메시지를 열어요.</string>
+
+    <!-- 설정 -->
+    <string name="drive_settings">주차 감지와 알림</string>
+    <string name="drive_car_selected">차량 블루투스: %1$s</string>
+    <string name="drive_car_none">차량 블루투스: 선택 안 함 (휴대폰 자동 주차 감지 꺼짐)</string>
+    <string name="drive_car_choose">주차 감지에 쓸 차량 블루투스</string>
+    <string name="drive_car_clear">선택 안 함 (자동 감지 끄기)</string>
+    <string name="drive_car_no_devices">페어링된 블루투스 기기가 없어요. 먼저 휴대폰 설정에서 차량과 블루투스를 연결해 주세요.</string>
+    <string name="drive_car_need_bluetooth">차량 블루투스를 고르려면 근처 기기 권한이 필요해요.</string>
+    <string name="drive_location_always">위치: 항상 허용 (앱이 꺼져 있어도 주차 위치 저장)</string>
+    <string name="drive_location_in_use">위치: 앱 사용 중에만 허용. 자동 저장에는 \'항상 허용\'이 필요해요</string>
+    <string name="drive_location_off">위치: 허용 안 됨 (주차 위치를 저장할 수 없어요)</string>
+    <string name="drive_notify_on">알림: 허용됨 (주차 후 요약 알림)</string>
+    <string name="drive_notify_off">알림: 허용 안 됨 (주차 후 요약 알림을 띄울 수 없어요)</string>
+    <string name="drive_detect_note">휴대폰은 차량 신호를 받을 수 없어서, 고른 차량 블루투스 연결이 끊긴 때의 휴대폰 위치를 주차 위치로 저장해요. 신호 대기 중에는 블루투스가 끊기지 않아 저장되지 않지만, 차에서 멀어진 뒤 끊기면 오차가 생기고 지하 주차장에서는 위치를 얻지 못할 수 있어요.</string>
+    <string name="drive_analyze">문자·카카오톡 알림에서 할 일 후보 만들기</string>
+    <string name="drive_analyze_note">켜면 새로 오는 문자·카카오톡 알림을 이 휴대폰 안에서만 규칙으로 확인해요. 메시지 내용은 저장하지 않고, 후보 제목과 출처만 저장해요. 끄면 남은 후보도 지워요.</string>
+    <string name="drive_analyze_consent">새로 오는 문자·카카오톡 알림 내용을 이 휴대폰 안에서 확인해 택배 도착, 일정 변경, 답장이 필요한 질문을 할 일 후보로 보여드려요.\n\n· 외부로 보내지 않아요.\n· 메시지 내용은 저장하지 않고 후보 제목·출처 앱만 저장해요.\n· 후보는 [추가]를 눌러야 할 일이 돼요.\n· 언제든 끌 수 있어요.</string>
+
+    <!-- 장소 -->
+    <string name="drive_places">장소 (장소 조건 할 일)</string>
+    <string name="drive_place_home">집</string>
+    <string name="drive_place_work">회사</string>
+    <string name="drive_place_set">%1$s · 위치 지정됨</string>
+    <string name="drive_place_unset">%1$s · 아직 지정 안 함</string>
+    <string name="drive_place_here">지금 위치로</string>
+    <string name="drive_place_add">장소 추가 (마트 등)</string>
+    <string name="drive_place_add_note">지금 있는 곳의 위치로 저장해요.</string>
+    <string name="drive_place_name_hint">장소 이름 (예: 마트)</string>
+    <string name="drive_place_saved">%1$s 위치를 저장했어요.</string>
+    <string name="drive_place_failed">지금 위치를 확인하지 못해 장소를 저장하지 않았어요.</string>
+    <!-- 차량에 남긴 물건 · 하차 후 처리할 일 -->
+    <string name="drive_items_header">차량에 남긴 물건 %1$d개</string>
+    <string name="drive_items_note">말하거나 입력하신 기록이에요. 차량 센서로 물건이 있는지 확인한 것은 아니에요.</string>
+    <string name="drive_items_empty">기록된 물건이 없어요. \"차에 우산 두고 왔어\"처럼 말하거나 [추가]를 누르세요.</string>
+    <string name="drive_find_car">차 찾기</string>
+    <string name="drive_find_car_none">저장된 주차 위치가 없어 차를 찾을 수 없어요.</string>
+    <string name="drive_find_car_inaccurate">마지막 주차 위치의 오차가 약 %1$dm예요. 주변을 함께 확인하세요.</string>
+    <string name="drive_pickup_header">하차 후 처리할 일 %1$d개</string>
+    <string name="drive_pickup_empty">챙기기로 한 물건이 없어요. \"차에서 노트북 챙겨야 해\"라고 말하면 여기에 생겨요.</string>
+    <string name="drive_item_retrieve">가져왔어요</string>
+    <string name="drive_item_unretrieve">되돌리기</string>
+    <string name="drive_item_remind_off">알림 끄기</string>
+    <string name="drive_item_remind_on">알림 켜기</string>
+    <string name="drive_item_make_pickup">챙기기</string>
+    <string name="drive_item_meta_place">%1$s에 둠</string>
+    <string name="drive_item_meta_time">%1$s 기록</string>
+    <string name="drive_item_meta_retrieved">%1$s 가져옴</string>
+    <string name="drive_item_meta_vehicle">차량: %1$s</string>
+    <string name="drive_item_meta_parking">주차 위치 연결: %1$s</string>
+    <string name="drive_item_meta_parking_old">이전 주차(%1$s)에 연결 · 그 뒤 새 주차가 저장됨</string>
+    <string name="drive_item_meta_parking_pending">다음 주차에 연결 예정</string>
+    <string name="drive_item_meta_no_parking">연결된 주차 위치 없음</string>
+    <string name="drive_item_meta_reminding">하차 후 알림 켜짐</string>
+    <string name="drive_item_meta_reminder_off">하차 후 알림 꺼짐</string>
+    <string name="drive_item_add_title">차에 둔 물건 기록</string>
+    <string name="drive_item_edit_title">물건 기록 수정</string>
+    <string name="drive_item_name_hint">물건 이름 (예: 우산)</string>
+    <string name="drive_item_spot_label">둔 자리</string>
+    <string name="drive_item_spot_car">차 (자리 모름)</string>
+    <string name="drive_item_pickup_check">하차 후 챙기기 (주차 후 알림)</string>
+    <string name="drive_item_delete_confirm">이 물건 기록을 지울까요? 연결된 하차 후 할 일도 함께 지워져요.</string>
+
+    <string name="drive_places_note">장소 조건 할 일(예: 집에 가면 택배 확인)은 주차 위치가 그 장소에서 300m 안일 때 주차 후 요약 알림으로 알려드려요. 주차 없이 걸어서 도착한 것은 감지하지 않아요.</string>
+
+    <!-- 데이터 -->
+    <string name="drive_data">데이터</string>
+    <string name="drive_clear_all">Drive To-Do 데이터 모두 지우기</string>
+    <string name="drive_clear_confirm">할 일, 후보, 차에 남긴 물건 기록, 주차 위치, 장소, 차량 블루투스 선택을 모두 지울까요? 호출어와 다른 설정은 그대로 둬요.</string>
+    <string name="drive_data_note">Drive To-Do 데이터는 이 휴대폰 안에만 저장되고 외부 서버로 보내지 않아요. 주소 표시는 휴대폰의 주소 변환 서비스를 써요.</string>
+
+    <!-- 주차 후 요약 알림 -->
+    <string name="drive_summary_channel">주차 후 요약</string>
+    <string name="drive_summary_title">주차했어요</string>
+    <string name="drive_summary_missed">운전 중 놓친 일 %1$d개가 있어요</string>
+    <string name="drive_summary_parking_saved">마지막 주차 위치를 저장했어요. 눌러서 확인하세요.</string>
+    <string name="drive_summary_parking_failed">위치를 얻지 못해 주차 위치를 저장하지 않았어요. 아직 차 근처라면 지금 위치로 저장하세요.</string>
+    <string name="drive_summary_parking_no_permission">위치 권한이 없어 주차 위치를 저장하지 못했어요.</string>
+    <string name="drive_summary_parking_inaccurate">주차 위치를 저장했지만 오차가 약 %1$dm예요. 아직 차 근처라면 지금 위치로 다시 저장하세요.</string>
+    <string name="drive_summary_save_here">지금 위치로 저장</string>
+    <string name="drive_capture_channel">주차 위치 저장 중</string>
+    <string name="drive_capture_title">주차 위치를 확인하는 중…</string>
+    <string name="drive_summary_parking_need_always">주차 위치를 저장하지 못했어요. 위치를 \'항상 허용\'으로 바꿔 주세요.</string>
+    <string name="drive_summary_place">%1$s 근처예요: %2$s</string>
+    <string name="drive_summary_pickup">차에서 챙길 물건: %1$s</string>
+
+    <!-- 음성 (폰) -->
+    <string name="conv_drive_offer_directions">걸어서 길찾기를 열까요?</string>
+    <string name="conv_drive_opening_directions">길찾기를 열게요.</string>
+    <string name="conv_permission_location">주차 위치를 저장하려면 위치 권한이 필요해요. 허용 창을 띄울게요.</string>
+</resources>

@@ -1,0 +1,79 @@
+<resources>
+    <!-- 음성비서 중심 메인 화면 (폰 빌드) -->
+    <string name="phone_brand">쁘이</string>
+    <string name="phone_settings">설정</string>
+    <string name="phone_tagline">운전 중에도, 말 한마디로.</string>
+    <string name="phone_description">화면을 직접 조작하지 않고 음성으로 카카오톡, 유튜브 등 지원하는 앱을 실행하고 메시지를 확인하세요.</string>
+    <string name="phone_wake_none">호출어 없음</string>
+    <string name="phone_voice_command">직접 음성비서 실행</string>
+    <string name="phone_enable_listening">상시 듣기 시작</string>
+    <string name="phone_state_none">호출어 \'쁘이\'를 먼저 등록해 주세요. 아래 버튼을 누르면 등록 화면으로 이동하고, 등록이 끝나면 바로 상시 듣기를 시작해요</string>
+    <string name="phone_state_retired">호출어가 \'%1$s\'에서 \'쁘이\'로 바뀌었어요. 아래 [호출어 등록]을 눌러 \'쁘이\'를 3번 새로 녹음해 주세요</string>
+    <string name="phone_state_starting">마이크를 여는 중…</string>
+    <string name="phone_state_start_failed">호출어 듣기를 시작하지 못했어요. 앱을 다시 열어 주세요</string>
+    <string name="phone_state_listening">● 듣는 중 · \'%1$s\'라고 불러 보세요</string>
+    <string name="phone_state_off">상시 듣기가 꺼져 있어요. [상시 듣기 시작]을 누르면 호출어 듣기와 플로팅 버튼이 다시 켜져요</string>
+    <string name="phone_state_silenced">다른 앱이 마이크를 쓰는 중이라 잠시 들을 수 없어요</string>
+    <string name="phone_state_mic_unavailable">마이크를 열 수 없어요. 잠시 후 다시 시도합니다</string>
+    <string name="phone_state_no_permission">마이크 권한이 없어 들을 수 없어요</string>
+    <string name="phone_state_detected">\'%1$s\' 호출을 들었어요</string>
+    <string name="phone_background_hint">상시 듣기가 아직 시작되지 않았어요. 눌러서 상태를 확인하세요 ›</string>
+    <string name="phone_background_needs_overlay">지금은 이 화면에서만 들어요. 다른 앱을 쓰는 중에도 부르려면 눌러서 \'다른 앱 위에 표시\'를 허용하세요 ›</string>
+    <string name="phone_background_on">● 상시 듣기 켜짐 · 다른 앱을 쓰는 중에도 들어요 (알림창에서 끌 수 있어요)</string>
+    <string name="phone_examples_title">이렇게 말해보세요</string>
+    <string name="phone_example_kakao">“카카오톡 열어줘”</string>
+    <string name="phone_example_youtube">“유튜브 열어줘”</string>
+    <string name="phone_example_messages">“최근 메시지 읽어줘”</string>
+    <string name="phone_example_messages_needs_access">“최근 메시지 읽어줘” · 알림 접근 허용 필요</string>
+    <string name="phone_footer_notice">폰 테스트 빌드 · 주행 중 제한은 차량용 앱에서만 동작합니다</string>
+
+    <!-- 설정 화면 -->
+    <string name="phone_settings_title">설정</string>
+    <string name="phone_settings_listen">호출어 듣기</string>
+    <string name="phone_listen_switch">호출어 상시 듣기 (다른 앱 사용 중에도)</string>
+    <string name="phone_listen_note">켜 두면 쁘이를 떠나 다른 앱이나 홈 화면을 쓰는 중에도 호출어를 듣습니다 (알림창에 표시, 화면이 꺼지거나 잠기면 쉼). 소리는 감지에만 쓰고 저장하거나 외부로 보내지 않습니다.</string>
+    <string name="phone_show_bubble">다른 앱 위에 플로팅 버튼 표시</string>
+    <string name="phone_show_bubble_note">꺼도 호출어는 계속 듣습니다. 상시 듣기가 켜져 있는 동안 알림창의 알림과 마이크 사용 표시는 Android 정책상 항상 보입니다.</string>
+    <string name="phone_settings_wake">호출어</string>
+    <string name="phone_settings_wake_registered">등록된 호출어: \'%1$s\'</string>
+    <string name="phone_settings_wake_none">등록된 호출어가 없습니다</string>
+    <string name="phone_settings_wake_note">재등록하면 새 녹음으로 학습에 성공했을 때만 기존 호출어가 바뀝니다. 중간에 취소하면 기존 호출어가 그대로 남습니다.</string>
+    <string name="phone_delete_message">\'%1$s\' 호출어 모델과 녹음 원본을 이 휴대전화에서 삭제할까요?</string>
+    <string name="phone_settings_permissions">권한</string>
+    <string name="phone_perm_mic_on">✓ 마이크 허용됨</string>
+    <string name="phone_perm_mic_off">✗ 마이크 권한 필요 (호출어·음성 명령)</string>
+    <string name="phone_perm_messages_on">✓ 알림 접근 허용됨 (메시지 읽기·답장)</string>
+    <string name="phone_perm_messages_off">✗ 알림 접근 필요 (메시지 읽기·답장)</string>
+    <string name="phone_perm_contacts_on">✓ 연락처 이름으로도 찾기 (비슷한 이름 찾기)</string>
+    <string name="phone_perm_contacts_off">선택: 연락처 이름으로도 찾기 (연락처 권한, 기기 안에서만 사용)</string>
+    <string name="phone_perm_floating_on">✓ 다른 앱 사용 중에도 듣는 중</string>
+    <string name="phone_perm_floating_off">상시 듣기 꺼짐</string>
+    <string name="phone_perm_floating_needs_overlay">✗ \'다른 앱 위에 표시\' 필요 (다른 앱 사용 중 호출)</string>
+    <string name="phone_perm_app_info">그 밖의 권한은 휴대전화의 앱 정보 화면에서 관리합니다</string>
+    <string name="phone_mic_blocked">마이크 권한이 꺼져 있습니다. 앱 정보 &gt; 권한에서 마이크를 허용하세요.</string>
+    <string name="phone_allow">허용</string>
+    <string name="phone_change">설정</string>
+    <string name="phone_app_info">앱 정보</string>
+    <string name="phone_settings_names">자주 연락하는 사람</string>
+    <string name="phone_names_count">등록한 이름 %1$d개</string>
+    <string name="phone_names_note">카카오톡 친구 이름은 카카오톡 앱 안에만 있어 쁘이가 읽을 수 없습니다 (연락처 권한으로도 읽히지 않음). 자주 연락하는 사람의 카카오톡 이름을 등록하면 비슷한 이름 찾기에 씁니다.</string>
+    <string name="phone_settings_favorites">내 앱 (즐겨찾기)</string>
+
+    <!-- 자주 연락하는 사람 (KnownNamesActivity) -->
+    <string name="known_names_title">자주 연락하는 사람</string>
+    <string name="known_names_intro">\"동진님 메시지 읽어줘\"처럼 이름으로 말할 때, 비슷하게 들린 이름(예: 동지님)을 여기 등록한 이름과도 비교합니다.\n\n• 카카오톡 친구 목록은 다른 앱이 읽을 수 있는 공식 방법이 없어 자동으로 가져올 수 없습니다. 카카오톡에 저장된 이름 그대로 등록해 주세요.\n• 이름만 이 휴대전화 안에 저장하고 외부로 보내지 않습니다.\n• 등록해도 메시지는 그 사람의 알림이 와 있을 때만 읽을 수 있습니다. 카카오톡 대화방의 지난 메시지는 읽을 수 없습니다.</string>
+    <string name="known_names_hint">카카오톡에 저장된 이름 (예: 동진님)</string>
+    <string name="known_names_add">추가</string>
+    <string name="known_names_delete">삭제</string>
+    <string name="known_names_import">지금 알림에서 이름 가져오기</string>
+    <string name="known_names_import_note">알림창에 와 있는 메시지의 보낸 사람·단체방 이름 중에서 골라 추가합니다 (알림 접근 허용 필요).</string>
+    <string name="known_names_import_title">추가할 이름을 고르세요</string>
+    <string name="known_names_import_none">가져올 새 이름이 없어요. 지금 알림창에 메시지 알림이 없거나 이미 등록된 이름입니다.</string>
+    <string name="known_names_needs_access">알림 접근이 허용되지 않아 알림에서 이름을 가져올 수 없어요. 이름을 직접 입력해 주세요.</string>
+    <string name="known_names_not_added">추가하지 못했어요. 이미 등록된 이름이거나 최대 개수(100개)입니다.</string>
+    <string name="known_names_count">등록한 이름 %1$d개</string>
+    <string name="known_names_empty">아직 등록한 이름이 없습니다.</string>
+    <string name="phone_show_favorites">메인 화면에 내 앱 표시</string>
+    <string name="phone_favorites_count">등록한 앱 %1$d개 · 숨겨도 삭제되지 않습니다</string>
+    <string name="phone_settings_dev">개발용</string>
+</resources>

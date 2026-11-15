@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 음성비서 화면. 주행 중에도 열리므로 큰 글자·짧은 문장·큰 버튼만 쓴다 (글자 입력 없음). -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingHorizontal="48dp"
+    android:paddingTop="32dp"
+    android:paddingBottom="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.7"
+        android:text="@string/assistant_title"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/assistantState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:textSize="44sp"
+        android:textStyle="bold" />
+
+    <ProgressBar
+        android:id="@+id/assistantLevel"
+        style="@android:style/Widget.DeviceDefault.ProgressBar.Horizontal"
+        android:layout_width="480dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:max="100" />
+
+    <ProgressBar
+        android:id="@+id/assistantBusy"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="24dp"
+        android:indeterminate="true"
+        android:visibility="gone" />
+
+    <!-- 알아들은 말 -->
+    <TextView
+        android:id="@+id/assistantHeard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:maxLines="2"
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/assistantDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:alpha="0.85"
+        android:gravity="center"
+        android:maxLines="5"
+        android:textSize="24sp" />
+
+    <!-- 이름이 같은 앱 후보 (최대 3개) -->
+    <LinearLayout
+        android:id="@+id/assistantChoices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/assistantDoneSpeaking"
+            style="@style/SetupButton"
+            android:text="@string/assistant_done_speaking" />
+
+        <Button
+            android:id="@+id/assistantSkip"
+            style="@style/SetupButton"
+            android:text="@string/assistant_skip" />
+
+        <Button
+            android:id="@+id/assistantSend"
+            style="@style/SetupButton"
+            android:text="@string/assistant_send" />
+
+        <Button
+            android:id="@+id/assistantDontSend"
+            style="@style/SetupButton"
+            android:text="@string/assistant_dont_send" />
+
+        <Button
+            android:id="@+id/assistantNotificationAccess"
+            style="@style/SetupButton"
+            android:text="@string/assistant_notification_access" />
+
+        <Button
+            android:id="@+id/assistantRetry"
+            style="@style/SetupButton"
+            android:text="@string/assistant_retry" />
+
+        <Button
+            android:id="@+id/assistantGrant"
+            style="@style/SetupButton"
+            android:text="@string/mic_permission_allow" />
+
+        <Button
+            android:id="@+id/assistantSettings"
+            style="@style/SetupButton"
+            android:text="@string/open_app_settings" />
+
+        <Button
+            android:id="@+id/assistantAllowSystemStt"
+            style="@style/SetupButton"
+            android:text="@string/assistant_allow_system_stt" />
+
+        <Button
+            android:id="@+id/assistantClose"
+            style="@style/SetupButton"
+            android:text="@string/assistant_close" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 플로팅 버튼: 감지 쉬는 중 (통화·마이크 사용 중 등) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
+    <solid android:color="#CC616161" />
+    <stroke android:width="2dp" android:color="#FFFFFFFF" />
+</shape>

@@ -1,0 +1,4 @@
+<resources>
+    <item name="phone_test_banner" type="id" />
+    <item name="floating_entry_button" type="id" />
+</resources>

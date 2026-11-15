@@ -1,0 +1,15 @@
+<resources>
+    <color name="launcher_phone_background">#FFB300</color>
+
+    <!-- 폰 빌드 화면 색 (다크 모드 + 노란 포인트) -->
+    <color name="phone_bg">#FF121212</color>
+    <color name="phone_surface">#FF1E1E1E</color>
+    <color name="phone_surface_pressed">#FF2A2A2A</color>
+    <color name="phone_accent">#FFFFC400</color>
+    <color name="phone_accent_soft">#26FFC400</color>
+    <color name="phone_on_accent">#FF1A1A1A</color>
+    <color name="phone_text">#FFFFFFFF</color>
+    <color name="phone_text_secondary">#B3FFFFFF</color>
+    <color name="phone_text_hint">#80FFFFFF</color>
+    <color name="phone_listening">#FF4CD964</color>
+</resources>

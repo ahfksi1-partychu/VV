@@ -1,0 +1,11 @@
+<resources>
+    <!-- 권한 설정 화면 이동·안내 (폰 테스트용). notification_access_message는 main 문구를 폰 빌드에서만 덮어쓴다. -->
+    <string name="notification_access_message">메시지 앱 알림을 읽고 답장할 수 있도록 \'알림 접근\'을 허용합니다.\n\n• \"메시지 읽어줘\"라고 요청할 때만, 지금 떠 있는 알림에서 읽습니다.\n• 읽은 내용은 저장하지 않고 화면을 닫으면 지웁니다. 외부 서버로 보내지 않습니다.\n• 소리 내어 읽을 때는 기기에 설치된 음성만 사용합니다.\n• 답장은 보낼 내용을 확인받은 뒤에만, 알림이 제공하는 답장 기능으로 보냅니다.\n• 설정에서 언제든 허용을 해제할 수 있습니다.\n\n다음 화면에서 \'%1$s\'을(를) 켜 주세요. 갤럭시는 앱 목록이 열리고, 노란 자동차 아이콘의 \'%1$s\' 항목으로 자동 이동해 잠깐 강조됩니다.</string>
+    <string name="notification_access_granted">알림 접근이 허용되었습니다. 이제 메시지를 읽을 수 있습니다.</string>
+    <string name="notification_access_not_yet_title">알림 접근이 아직 꺼져 있습니다</string>
+    <string name="notification_access_not_yet_message">목록에서 노란 자동차 아이콘의 \'%1$s\' 스위치를 켜 주세요.\n\n스위치가 회색이라 켜지지 않거나 \'제한된 설정\' 안내가 나오면:\n1. [앱 정보]를 누릅니다.\n2. 오른쪽 위 ⋮ → \'제한된 설정 허용\'을 누르고 본인 확인을 합니다.\n3. 돌아와서 [다시 열기]로 알림 접근을 켭니다.\n\n(브라우저·파일 앱으로 설치한 앱에 나타나는 Android 보안 기능입니다.)</string>
+    <string name="notification_access_retry">다시 열기</string>
+    <string name="notification_access_app_info">앱 정보</string>
+    <string name="notification_access_no_settings">이 기기에서 알림 접근 설정 화면을 찾지 못했습니다.</string>
+    <string name="close">닫기</string>
+</resources>

@@ -1,0 +1,217 @@
+<resources>
+    <string name="app_name">쁘이</string>
+
+    <string name="my_apps">내 앱</string>
+    <string name="add_app">+ 앱 추가</string>
+    <string name="empty_title">등록된 앱이 없습니다</string>
+    <string name="empty_hint">\'+ 앱 추가\'를 눌러 자주 쓰는 앱을 등록하세요</string>
+    <string name="driving_banner">주행 중에는 앱 실행만 가능합니다. 등록·편집은 정차 후 이용하세요.</string>
+
+    <string name="loading_apps">설치된 앱을 확인하는 중…</string>
+    <string name="picker_title">앱 추가</string>
+    <string name="picker_empty">등록할 수 있는 앱이 없습니다.\n차량에 실행 가능한 앱이 설치되면 다시 시도하세요.</string>
+    <string name="badge_preinstalled">기본 앱</string>
+    <string name="badge_registered">등록됨</string>
+    <string name="added_app">%1$s 앱을 등록했습니다</string>
+    <string name="already_registered">%1$s 앱은 이미 등록되어 있습니다</string>
+
+    <string name="app_not_installed">설치되지 않음 · 실행할 수 없습니다</string>
+    <string name="alias_original_name">원래 이름: %1$s</string>
+    <string name="move_up">위로 이동</string>
+    <string name="move_down">아래로 이동</string>
+    <string name="alias">별칭</string>
+    <string name="remove">삭제</string>
+
+    <string name="launching_app">%1$s 실행</string>
+    <string name="launch_failed_title">앱을 실행할 수 없습니다</string>
+    <string name="launch_not_installed">%1$s 앱이 차량에 설치되어 있지 않습니다. 삭제되었거나 다른 사용자 프로필에만 설치된 앱일 수 있습니다.</string>
+    <string name="launch_disabled">%1$s 앱이 비활성화되어 있어 실행할 수 없습니다.</string>
+    <string name="launch_no_activity">%1$s 앱에 실행 가능한 화면이 없습니다. 앱이 업데이트되었다면 삭제 후 다시 등록하세요.</string>
+    <string name="launch_blocked_driving">%1$s 앱은 주행 중 사용이 제한된 앱입니다. 차량을 안전한 곳에 정차한 뒤 실행하세요.</string>
+    <string name="launch_failed">%1$s 앱 실행에 실패했습니다: %2$s</string>
+    <string name="launch_no_match">\'%1$s\'에 해당하는 등록 앱이 없습니다.</string>
+    <string name="launch_ambiguous">\'%1$s\'에 해당하는 앱이 여러 개입니다. 별칭을 다르게 지정하세요.</string>
+
+    <string name="alias_title">%1$s 별칭</string>
+    <string name="alias_message">홈과 음성 명령에서 부를 짧은 이름을 입력하세요.</string>
+    <string name="alias_clear">별칭 지우기</string>
+    <string name="alias_saved">%1$s → %2$s 별칭을 저장했습니다</string>
+    <string name="alias_cleared">%1$s 별칭을 지웠습니다</string>
+    <string name="alias_too_long">별칭은 %1$d자 이하로 입력하세요</string>
+    <string name="alias_duplicate">이미 \'%1$s\' 앱이 같은 이름을 쓰고 있습니다</string>
+    <string name="app_not_found">등록 정보를 찾을 수 없습니다</string>
+
+    <string name="remove_title">앱 삭제</string>
+    <string name="remove_message">%1$s 앱을 내 앱에서 삭제할까요?\n(차량에서 앱이 삭제되지는 않습니다)</string>
+    <string name="removed_app">%1$s 앱을 내 앱에서 삭제했습니다</string>
+
+    <string name="edit_blocked_driving">주행 중에는 등록·편집할 수 없습니다</string>
+    <string name="keyboard_blocked_driving">주행 중에는 글자 입력이 제한됩니다</string>
+
+    <string name="ok">확인</string>
+    <string name="cancel">취소</string>
+    <string name="save">저장</string>
+
+    <!-- 음성 호출 (메인 화면) -->
+    <string name="voice_title">음성 호출</string>
+    <string name="voice_not_registered">호출어가 등록되지 않았습니다. 내 목소리로 \'쁘이\'를 등록하세요.</string>
+    <string name="voice_retired">호출어가 \'%1$s\'에서 \'쁘이\'로 바뀌었습니다. [호출어 등록]을 눌러 \'쁘이\'를 3번 새로 녹음하세요.</string>
+    <string name="voice_registered">호출어 \'%1$s\'</string>
+    <string name="voice_state_off">듣지 않음</string>
+    <string name="voice_state_listening">듣는 중 · 화면이 열려 있을 때만 듣습니다</string>
+    <string name="voice_state_silenced">다른 앱(시스템 음성비서 등)이 마이크를 쓰는 중이라 잠시 들을 수 없습니다</string>
+    <string name="voice_state_mic_unavailable">마이크를 사용할 수 없습니다 (권한·사용 중·장치 확인)</string>
+    <string name="voice_state_no_permission">마이크 권한이 없어 들을 수 없습니다</string>
+    <string name="voice_test_audio">[개발용 테스트 오디오 사용 중]</string>
+    <string name="voice_register">호출어 등록</string>
+    <string name="voice_reregister">재등록</string>
+    <string name="voice_delete">삭제</string>
+    <string name="voice_measure">측정(개발용)</string>
+    <string name="voice_listen_on">듣기 켜기</string>
+    <string name="voice_listen_off">듣기 끄기</string>
+    <string name="voice_delete_title">호출어 삭제</string>
+    <string name="voice_delete_message">\'%1$s\' 호출어 모델과 녹음 원본을 이 차량에서 삭제할까요?</string>
+    <string name="voice_deleted">호출어 모델과 녹음을 삭제했습니다</string>
+    <string name="voice_listening_started">\'%1$s\' 호출을 듣고 있습니다</string>
+    <string name="voice_command">음성 명령</string>
+    <string name="voice_system_stt_allowed">시스템 음성 인식 허용됨</string>
+    <string name="voice_system_stt_revoke_title">시스템 음성 인식</string>
+    <string name="voice_system_stt_revoke_message">시스템 음성 인식 허용을 해제할까요?\n해제하면 기기 안에서 처리하는 음성 인식기가 없는 차량에서는 음성 명령을 쓸 수 없습니다.</string>
+    <string name="voice_system_stt_revoke">허용 해제</string>
+    <string name="voice_system_stt_revoked">시스템 음성 인식 허용을 해제했습니다</string>
+    <string name="mic_permission_title">마이크 권한</string>
+    <string name="mic_permission_rationale">호출어를 녹음하고 알아듣기 위해 마이크를 사용합니다.\n녹음과 음성 모델은 이 차량 안에만 저장되며 외부 서버로 보내지 않습니다.</string>
+    <string name="mic_permission_denied">마이크 권한이 거부되었습니다. 호출어를 쓰려면 권한을 허용하세요.</string>
+    <string name="mic_permission_blocked">마이크 권한이 꺼져 있습니다. 차량 설정 &gt; 앱 &gt; 쁘이 &gt; 권한에서 마이크를 허용하세요.</string>
+    <string name="mic_permission_allow">권한 허용</string>
+    <string name="open_app_settings">앱 설정 열기</string>
+
+    <!-- 호출어 등록 화면 -->
+    <string name="setup_title">음성 호출어 등록</string>
+    <string name="setup_intro">\'쁘이\'를 내 목소리로 3번 녹음하면, 3개 녹음 각각을 호출어 기준으로 저장합니다. 셋 중 하나와만 비슷해도 호출어가 작동합니다.</string>
+    <string name="setup_name_hint">쁘이</string>
+    <string name="setup_name_fixed">호출어는 \'%1$s\'예요. [다음]을 누르고 \'%1$s\'를 내 목소리로 3번 녹음하세요.</string>
+    <string name="setup_name_changed">호출어가 \'%1$s\'에서 \'%2$s\'로 바뀌었어요. 이전 호출어로는 더 이상 부를 수 없어요. [다음]을 누르고 \'%2$s\'를 3번 새로 녹음하세요.</string>
+    <string name="setup_name_rule">2~10자. 3음절 이상이고 평소 대화에 잘 나오지 않는 이름이 더 정확합니다.</string>
+    <string name="setup_name_too_short">이름을 2자 이상 입력하세요</string>
+    <string name="setup_name_too_long">이름은 10자 이하로 입력하세요</string>
+    <string name="setup_name_short_warning">2음절 이름은 비슷한 말에 잘못 반응할 수 있습니다. 가능하면 3음절 이상을 권장합니다.</string>
+    <string name="setup_privacy">녹음과 음성 모델은 이 차량 안에만 저장되며 외부 서버로 보내지 않습니다. 언제든 삭제하거나 다시 등록할 수 있습니다.</string>
+    <string name="setup_later">나중에</string>
+    <string name="setup_next">다음</string>
+    <string name="setup_record_instruction">\'%1$s\'를 3번 말해 주세요. 매번 목소리·속도·높낮이를 다르게 해 보세요</string>
+    <string name="setup_record_tip">조용한 상태에서 말하세요. 예: 평소 목소리 / 빠르고 낮게 / 느리고 높게. 녹음 버튼을 누른 뒤 말하면 됩니다.</string>
+    <string name="setup_progress">%1$d / %2$d</string>
+    <string name="setup_record">%1$d회차 녹음</string>
+    <string name="setup_rerecord_take">%1$d회차 다시 녹음</string>
+    <string name="setup_recording">듣는 중… \'%1$s\'라고 말하세요</string>
+    <string name="setup_analyzing">녹음을 확인하는 중…</string>
+    <string name="setup_training">내 목소리로 호출어 모델을 만드는 중…</string>
+    <string name="setup_rerecord">다시 녹음</string>
+    <string name="setup_take_empty">%1$d회차 · 대기</string>
+    <string name="setup_take_ok">%1$d회차 · 통과 (%2$.1f초, 잡음 대비 %3$d dB)</string>
+    <string name="setup_take_bad">%1$d회차 · 다시 녹음 필요: %2$s</string>
+    <string name="setup_fix_marked">표시된 회차만 다시 녹음하세요</string>
+    <string name="setup_done_title">등록 완료</string>
+    <string name="setup_done_message">\'%1$s\' 호출어를 등록했습니다. 쁘이 화면이 열려 있을 때 \'%1$s\'라고 부르면 음성비서가 응답합니다.</string>
+    <string name="setup_done_detail">개인 감지 기준값 %1$.3f · 녹음 3개 · 이 차량에만 저장됨</string>
+    <string name="setup_finish">완료</string>
+    <string name="setup_cancel_title">등록 취소</string>
+    <string name="setup_cancel_message">지금까지 녹음한 내용은 저장되지 않고 삭제됩니다. 기존에 등록된 호출어는 그대로 유지됩니다.</string>
+    <string name="setup_cancel_confirm">등록 취소</string>
+    <string name="setup_continue">계속 녹음</string>
+    <string name="setup_mic_unavailable">마이크를 열 수 없습니다. 다른 앱이 마이크를 쓰는 중인지 확인한 뒤 다시 시도하세요.</string>
+    <string name="setup_save_failed">모델 저장에 실패했습니다: %1$s</string>
+    <string name="setup_blocked_driving">주행 중에는 호출어를 등록할 수 없습니다. 정차 후 이용하세요.</string>
+
+    <string name="issue_silent">소리가 거의 들리지 않았어요. 마이크 가까이에서 다시 말해 주세요</string>
+    <string name="issue_too_quiet">목소리가 너무 작아요. 조금 더 크게 말해 주세요</string>
+    <string name="issue_too_short">너무 짧아요. 호출어 전체를 또박또박 말해 주세요</string>
+    <string name="issue_too_long">너무 길어요. 호출어만 한 번 말해 주세요</string>
+    <string name="issue_clipped">소리가 너무 커서 찌그러졌어요. 조금 작게 말해 주세요</string>
+    <string name="issue_noisy">주변 소음이 커요. 조용한 상태에서 다시 녹음해 주세요</string>
+    <string name="issue_cut_off">말이 잘렸어요. 버튼을 누르고 잠시 뒤에 말하고, 끝까지 기다려 주세요</string>
+    <string name="issue_inconsistent">다른 녹음과 발음·길이가 많이 달라요. 다른 회차와 같은 방식으로 말해 주세요</string>
+    <!-- 음성비서 화면 -->
+    <string name="assistant_title">쁘이 음성비서</string>
+    <string name="assistant_close">닫기</string>
+    <string name="assistant_retry">다시 말하기</string>
+    <string name="assistant_done_speaking">다 말했어요</string>
+    <string name="assistant_allow_system_stt">시스템 음성 인식 사용</string>
+    <string name="assistant_state_preparing">준비 중…</string>
+    <string name="assistant_state_listening">말씀하세요</string>
+    <string name="assistant_state_hearing">듣고 있어요</string>
+    <string name="assistant_state_processing">처리 중…</string>
+    <string name="assistant_state_done">%1$s 실행</string>
+    <string name="assistant_state_choose">어떤 앱을 열까요?</string>
+    <string name="assistant_state_failed">처리하지 못했어요</string>
+    <string name="assistant_wake_heard">\'%1$s\' 호출을 들었어요</string>
+    <string name="assistant_example">예: “카카오톡 열어줘”, “최근 메시지 읽어줘”</string>
+    <string name="assistant_example_apps">예: “카카오톡 열어줘”, “내비게이션 실행해 줘”</string>
+    <string name="assistant_heard">“%1$s”</string>
+    <string name="assistant_choose_hint">이름이 비슷한 앱이 여러 개 있어요</string>
+    <string name="assistant_cancelled">음성 명령을 취소했습니다</string>
+    <string name="assistant_blocked_driving">주행 중에는 할 수 없습니다. 정차 후 이용하세요.</string>
+    <string name="assistant_system_stt_title">시스템 음성 인식 사용</string>
+    <string name="assistant_system_stt_message">이 차량에는 기기 안에서만 처리하는 음성 인식기가 없어, 시스템 기본 음성 인식 서비스를 써야 합니다.\n\n• 서비스에 따라 음성 명령이 외부 서버로 전송될 수 있습니다.\n• 쁘이는 오프라인 처리를 요청하지만 보장할 수는 없습니다.\n• 호출어 녹음과 모델은 계속 이 차량 안에만 저장됩니다.\n• 메인 화면에서 언제든 허용을 해제할 수 있습니다.</string>
+    <string name="assistant_system_stt_allow">허용</string>
+
+    <string name="fail_no_permission">음성 명령을 들으려면 마이크 권한이 필요합니다.</string>
+    <string name="fail_permission_blocked">마이크 권한이 꺼져 있습니다. 앱 설정에서 마이크를 허용하세요.</string>
+    <string name="fail_stt_needs_consent">기기 안에서 처리하는 음성 인식기가 없습니다. 시스템 음성 인식은 음성을 외부 서버로 보낼 수 있어 허용한 경우에만 사용합니다.</string>
+    <string name="fail_stt_unavailable">이 차량에서 사용할 수 있는 음성 인식 서비스가 없습니다.</string>
+    <string name="fail_stt_language">한국어 음성 인식 모델이 없습니다. 차량 설정에서 한국어 음성 인식을 확인하세요.</string>
+    <string name="fail_stt_network">음성 인식에 네트워크가 필요합니다. 연결 상태를 확인하세요.</string>
+    <string name="fail_stt_error">음성 인식 서비스에 문제가 생겼습니다. 잠시 뒤 다시 시도하세요.</string>
+    <string name="fail_mic_busy">다른 앱(시스템 음성비서 등)이 마이크를 쓰고 있습니다. 잠시 뒤 다시 시도하세요.</string>
+    <string name="fail_no_speech">말소리가 들리지 않았어요.</string>
+    <string name="fail_not_understood">잘 알아듣지 못했어요. 다시 말해 주세요.</string>
+    <string name="fail_unknown_command">앱 실행 명령으로 알아듣지 못했어요. 예: “카카오톡 열어줘”</string>
+    <string name="fail_unsupported">전화 걸기, 다른 사람에게 새 메시지 보내기는 지원하지 않습니다. 앱 실행, 받은 메시지 읽기와 답장만 할 수 있어요.</string>
+    <string name="fail_app_not_found">\'%1$s\' 앱을 찾지 못했어요. 내 앱에 등록하고 별칭을 정하면 더 잘 찾습니다.</string>
+    <string name="fail_launch">%1$s 앱을 실행하지 못했습니다.</string>
+
+    <!-- 메시지 읽기·답장 -->
+    <string name="assistant_state_reading">메시지</string>
+    <string name="assistant_state_ask_body">어떤 내용으로 답장할까요?</string>
+    <string name="assistant_state_confirm">이대로 보낼까요?</string>
+    <string name="assistant_state_after_read">답장할까요?</string>
+    <string name="assistant_state_sent">답장을 보냈습니다</string>
+    <string name="assistant_message_from">%1$s · %2$s</string>
+    <string name="assistant_message_from_group">%1$s · %3$s · %2$s</string>
+    <string name="assistant_after_read_hint">예: “곧 간다고 답장해 줘”, “다시 읽어줘”, “닫아”</string>
+    <string name="assistant_after_read_no_reply">이 메시지 알림은 답장 기능이 없어요. “다시 읽어줘” 또는 “닫아”</string>
+    <string name="assistant_draft">보낼 내용: “%1$s”</string>
+    <string name="assistant_confirm_hint">“응” 또는 “보내”라고 하거나 [보내기]를 누르면 보냅니다. 그 밖의 대답이나 대답이 없으면 보내지 않습니다.</string>
+    <string name="assistant_text_only">기기에 오프라인 한국어 음성이 없어 소리 없이 화면으로만 보여 줍니다</string>
+    <string name="assistant_send">보내기</string>
+    <string name="assistant_dont_send">보내지 않기</string>
+    <string name="assistant_skip">건너뛰기</string>
+    <string name="assistant_notification_access">알림 접근 설정</string>
+    <string name="assistant_reply_cancelled">답장을 보내지 않았습니다</string>
+
+    <!-- TTS로 읽는 문장 -->
+    <string name="tts_read_message">%1$s, %2$s님의 메시지입니다. %3$s</string>
+    <string name="tts_read_message_group">%1$s, %4$s에서 %2$s님의 메시지입니다. %3$s</string>
+    <string name="tts_ask_reply_body">%1$s님에게 어떤 내용으로 답장할까요?</string>
+    <string name="tts_confirm_reply">%1$s님에게, %2$s, 라고 보낼까요?</string>
+    <string name="tts_confirm_again">보내려면 보내, 그만두려면 취소라고 말해 주세요. 보낼 내용은, %1$s, 입니다.</string>
+    <string name="tts_reply_sent">%1$s님에게 답장을 보냈습니다.</string>
+
+    <string name="fail_messages_unsupported">차량용 쁘이는 메시지 읽기·답장을 지원하지 않습니다. Android Automotive에서는 차량 기본 음성비서만 메시지 알림을 읽고 답장할 수 있습니다.</string>
+    <string name="fail_notification_access">메시지를 읽으려면 알림 접근을 허용해야 합니다.</string>
+    <string name="fail_notification_not_connected">알림 접근이 아직 연결되지 않았습니다. 잠시 뒤 다시 시도하세요.</string>
+    <string name="fail_no_messages">읽을 메시지 알림이 없습니다.</string>
+    <string name="fail_no_messages_for_app">\'%1$s\'에서 온 메시지 알림이 없습니다.</string>
+    <string name="fail_reply_without_message">답장할 메시지가 없습니다. 먼저 “최근 메시지 읽어줘”라고 말해 주세요.</string>
+    <string name="fail_reply_not_supported">%1$s 알림은 답장 기능을 제공하지 않습니다.</string>
+    <string name="fail_message_gone">메시지 알림이 사라져 답장할 수 없습니다. 앱에서 직접 확인해 주세요.</string>
+    <string name="fail_send_failed">답장을 보내지 못했습니다.</string>
+
+    <!-- 알림 접근 안내 -->
+    <string name="notification_access_title">메시지 알림 접근</string>
+    <string name="notification_access_message">메시지 앱 알림을 읽고 답장할 수 있도록 \'알림 접근\'을 허용합니다.\n\n• \"메시지 읽어줘\"라고 요청할 때만, 지금 떠 있는 알림에서 읽습니다.\n• 읽은 내용은 저장하지 않고 화면을 닫으면 지웁니다. 외부 서버로 보내지 않습니다.\n• 소리 내어 읽을 때는 기기에 설치된 음성만 사용합니다.\n• 답장은 보낼 내용을 확인받은 뒤에만, 알림이 제공하는 답장 기능으로 보냅니다.\n• 설정에서 언제든 허용을 해제할 수 있습니다.\n\n다음 화면에서 \'%1$s\'을(를) 켜 주세요.</string>
+    <string name="notification_access_open">설정 열기</string>
+    <string name="voice_messages_ready">메시지 읽기·답장 사용 가능 (알림 접근 허용됨)</string>
+    <string name="voice_messages_needs_access">메시지 읽기·답장: 알림 접근 필요 (눌러서 설정)</string>
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Drive To-Do (차량용·폰 공통): 주차 위치, 음성 할 일 -->
+<resources>
+    <!-- 음성 응답 -->
+    <string name="drive_parking_answer">마지막 주차 위치는 %1$s예요. %2$s에 저장했어요. %3$s</string>
+    <string name="drive_parking_no_address">주소를 확인하지 못한 위치</string>
+    <string name="drive_parking_where_note">%1$s, %2$s</string>
+    <string name="drive_parking_no_location">위치를 확인하지 못한 곳</string>
+    <string name="drive_parking_accuracy">위치 오차가 약 %1$d미터라 주변을 함께 확인해 주세요.</string>
+    <string name="drive_parking_none">저장된 주차 위치가 없어요. 주차가 확인되거나 여기 주차했어, 라고 말하면 저장돼요.</string>
+    <string name="drive_parking_saved">지금 위치를 주차 위치로 저장했어요.</string>
+    <string name="drive_parking_save_failed">지금 위치를 확인하지 못해서 주차 위치를 저장하지 않았어요.</string>
+    <string name="drive_parking_need_location">주차 위치를 저장하려면 위치 권한이 필요해요.</string>
+    <string name="drive_todo_added">할 일에 추가했어요. %1$s. %2$s</string>
+    <string name="drive_todo_duplicate">%1$s, 는 이미 할 일에 있어요.</string>
+    <string name="drive_todo_due_said">기한은 %1$s로 정했어요.</string>
+    <string name="drive_todo_place_said">%1$s 조건으로 저장했어요.</string>
+    <string name="drive_todo_list_empty">남은 할 일이 없어요.</string>
+    <string name="drive_todo_list">남은 할 일이 %1$d개 있어요. %2$s.</string>
+
+    <!-- 시각 -->
+    <string name="drive_time_just_now">방금</string>
+    <string name="drive_time_minutes_ago">%1$d분 전</string>
+    <string name="drive_time_today">오늘</string>
+    <string name="drive_time_tomorrow">내일</string>
+    <string name="drive_time_yesterday">어제</string>
+    <string name="drive_time_date">%1$d월 %2$d일</string>
+    <string name="drive_time_am">오전</string>
+    <string name="drive_time_pm">오후</string>
+    <string name="drive_time_clock">%1$s %2$d시 %3$d분</string>
+    <string name="drive_time_clock_hour">%1$s %2$d시</string>
+
+    <!-- 차량에 남긴 물건 (사용자가 말한 기록. 실제로 있는지는 확인하지 않음) -->
+    <string name="drive_item_saved">%1$s에 %2$s 두었다고 기록했어요.</string>
+    <string name="drive_item_pickup_saved">%1$s를 하차 후 할 일에 넣었어요. 주차가 확인되면 알려 드릴게요.</string>
+    <string name="drive_item_linked">마지막 주차 위치와 연결했어요.</string>
+    <string name="drive_item_linked_inaccurate">마지막 주차 위치와 연결했지만, 그 위치는 오차가 커요.</string>
+    <string name="drive_item_link_next">운전 중이라 다음 주차 위치와 연결할게요.</string>
+    <string name="drive_item_no_parking">저장된 주차 위치가 없어 위치 없이 기록했어요.</string>
+    <string name="drive_item_already">%1$s 이미 %2$s에 있다고 기록돼 있어요.</string>
+    <string name="drive_item_now_pickup">%1$s 이미 기록돼 있어서, %2$s를 하차 후 할 일에 넣었어요.</string>
+    <string name="drive_item_list_empty">차에 두었다고 기록된 물건이 없어요.</string>
+    <string name="drive_item_list">기록된 물건은 %1$s, 모두 %2$d개예요. 말씀하신 기록이라 실제로 차에 있는지는 확인하지 못해요.</string>
+    <string name="drive_item_pickup_empty">차에서 챙기기로 기록된 물건은 없어요.</string>
+    <string name="drive_item_pickup_list">챙기기로 기록된 물건은 %1$s예요.</string>
+    <string name="drive_item_found">%1$s %2$s %3$s에 두었다고 기록돼 있어요.</string>
+    <string name="drive_item_found_retrieved">%1$s %2$s 가져왔다고 기록돼 있어요.</string>
+    <string name="drive_item_not_found">%1$s 차에 두었다는 기록은 없어요.</string>
+    <string name="drive_item_car_at">차는 마지막으로 %1$s에 주차했어요.</string>
+    <string name="drive_item_car_unknown">저장된 주차 위치는 없어요.</string>
+    <string name="drive_item_retrieved">%1$s 가져온 것으로 표시했어요.</string>
+    <string name="drive_item_this_car">이 차량</string>
+    <string name="drive_item_remind_title">차에서 챙길 물건이 있어요</string>
+    <string name="drive_item_remind_channel">차에서 챙길 물건</string>
+</resources>

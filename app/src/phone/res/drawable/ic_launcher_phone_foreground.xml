@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 폰 테스트용 앱 아이콘 전경: 차량 + 음성 표시. 설정 앱 목록에서 기본 안드로이드 아이콘과 구분되도록 한다. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- 로고 문자 VV -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#1A1A2E"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M40,26 L46,39 L52,26 M56,26 L62,39 L68,26" />
+    <!-- 차체 -->
+    <path
+        android:fillColor="#1A1A2E"
+        android:pathData="M34,58 L39,47 Q41,43 45,43 L63,43 Q67,43 69,47 L74,58 Q78,58.5 78,62.5 L78,68 Q78,70 76,70 L32,70 Q30,70 30,68 L30,62.5 Q30,58.5 34,58 Z" />
+    <!-- 창문 -->
+    <path
+        android:fillColor="#FFB300"
+        android:pathData="M40,57 L43.5,48.5 Q44.5,46.5 46.5,46.5 L52.5,46.5 L52.5,57 Z M55.5,46.5 L61.5,46.5 Q63.5,46.5 64.5,48.5 L68,57 L55.5,57 Z" />
+    <!-- 바퀴 -->
+    <path
+        android:fillColor="#1A1A2E"
+        android:strokeColor="#FFB300"
+        android:strokeWidth="2.5"
+        android:pathData="M34.5,70 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0 Z M61.5,70 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0 Z" />
+</vector>

@@ -1,0 +1,179 @@
+<!-- 폰 화면용 크기 (main/res/values/dimens.xml 을 덮어씀). 차량용은 76dp·22sp 그대로. -->
+<resources>
+    <dimen name="touch_target">52dp</dimen>
+
+    <style name="RowButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:minWidth">@dimen/touch_target</item>
+        <item name="android:minHeight">@dimen/touch_target</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="SetupButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:minWidth">120dp</item>
+        <item name="android:minHeight">@dimen/touch_target</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <!-- 세로 화면: 한 줄을 나눠 쓰는 버튼 (글자가 길면 두 줄로 줄바꿈) -->
+    <style name="PortraitButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginHorizontal">3dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">@dimen/touch_target</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!-- 세로 화면: 화면 폭 전체를 쓰는 세로 버튼 묶음 -->
+    <style name="StackButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:minHeight">@dimen/touch_target</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <!-- 메인 화면 (일반 사용자용) -->
+    <style name="PhoneAccentButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">60dp</item>
+        <item name="android:background">@drawable/phone_button_accent</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textColor">@color/phone_on_accent</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="PhoneOutlineButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/touch_target</item>
+        <item name="android:background">@drawable/phone_button_outline</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textColor">@color/phone_accent</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- 누를 수 있는 안내 줄 -->
+    <style name="PhoneHintRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:background">@drawable/phone_card</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingHorizontal">16dp</item>
+        <item name="android:paddingVertical">10dp</item>
+        <item name="android:textColor">@color/phone_text_secondary</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- '이렇게 말해보세요' 예시 한 줄 -->
+    <style name="PhoneExample">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:background">@drawable/phone_card</item>
+        <item name="android:drawableStart">@drawable/ic_phone_mic</item>
+        <item name="android:drawablePadding">12dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="android:paddingHorizontal">16dp</item>
+        <item name="android:textColor">@color/phone_text</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- 설정 화면 구역 제목 -->
+    <style name="SettingsSection">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">28dp</item>
+        <item name="android:textColor">@color/phone_accent</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="SettingsNote">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:textColor">@color/phone_text_hint</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="SettingsSwitch">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:minHeight">@dimen/touch_target</item>
+        <item name="android:textColor">@color/phone_text</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="SettingsRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:background">@drawable/phone_card</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:minHeight">60dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:paddingVertical">6dp</item>
+    </style>
+
+    <style name="SettingsRowText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/phone_text</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="SettingsRowButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:minWidth">72dp</item>
+        <item name="android:minHeight">44dp</item>
+        <item name="android:background">@drawable/phone_button_accent</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:paddingHorizontal">14dp</item>
+        <item name="android:textColor">@color/phone_on_accent</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- 플로팅 음성비서 창 버튼 -->
+    <style name="OverlayButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">6dp</item>
+        <item name="android:minWidth">88dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="FloatingRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="FloatingRowText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+</resources>

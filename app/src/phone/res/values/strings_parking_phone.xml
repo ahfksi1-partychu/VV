@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 주차 위치 상세 기록 (폰 빌드): 기록 안내, 기록 화면, 메인 화면 최근 주차 카드 -->
+<resources>
+    <!-- 안내 (알림·팝업·메인 카드) -->
+    <string name="parking_prompt_title">주차 위치를 기록하시겠습니까?</string>
+    <string name="parking_prompt_public">주차가 감지되었어요. 눌러서 구역·사진을 기록하세요.</string>
+    <string name="parking_prompt_text">직접 입력</string>
+    <string name="parking_prompt_photo">사진 촬영</string>
+    <string name="parking_prompt_later">나중에 입력</string>
+    <string name="parking_prompt_skip">건너뛰기</string>
+    <string name="parking_prompt_channel">주차 위치 기록 안내</string>
+    <string name="parking_prompt_no_location">위치를 얻지 못했어요 (지하 주차장 등). 구역·번호나 사진을 남겨 두세요.</string>
+
+    <!-- 기록 화면 -->
+    <string name="parking_record_title">주차 위치 기록</string>
+    <string name="parking_record_when">%1$s 주차 · %2$s</string>
+    <string name="parking_record_source_car">차량에서 감지 (기어 P·시동 끔)</string>
+    <string name="parking_record_source_phone">휴대폰에서 감지 (차량 블루투스 끊김)</string>
+    <string name="parking_record_source_manual">직접 저장</string>
+    <string name="parking_record_no_location">위치 정보 없음</string>
+    <string name="parking_record_no_location_hint">위치를 얻지 못했어요 (지하 주차장 등). 구역·번호나 사진으로 남겨 두세요.</string>
+    <string name="parking_record_note_label">주차 구역·번호</string>
+    <string name="parking_record_note_hint">예) B구역 13번, 지하 3층 A구역</string>
+    <string name="parking_record_photo_label">사진 (기둥·구역 안내판)</string>
+    <string name="parking_record_photo_preview">다른 기기에서 받은 작은 미리보기예요. 원본은 찍은 기기에만 있어요.</string>
+    <string name="parking_record_gallery">앨범에서 선택</string>
+    <string name="parking_record_remove_photo">사진 삭제</string>
+    <string name="parking_record_retake">다시 촬영</string>
+    <string name="parking_record_privacy">사진은 이 앱 안에만 저장돼요 (촬영 위치 등 사진 정보는 지움). 차량과 연결한 경우 작은 미리보기만 암호화해서 보내요.</string>
+    <string name="parking_record_save">저장</string>
+    <string name="parking_record_edit">구역·사진 기록</string>
+    <string name="parking_record_none">저장된 주차 기록이 없어요.</string>
+    <string name="parking_record_no_camera">사진을 찍을 카메라 앱이 없어요.</string>
+    <string name="parking_record_no_gallery">사진을 고를 앱이 없어요.</string>
+    <string name="parking_record_photo_saving">사진을 저장하는 중이에요…</string>
+    <string name="parking_record_photo_failed">사진을 저장하지 못했어요.</string>
+    <string name="parking_record_replaced">그사이 새 주차가 저장되어 이 기록을 고치지 못했어요.</string>
+    <string name="parking_record_saved">주차 위치를 기록했어요.</string>
+    <string name="parking_record_cleared">구역·사진을 지웠어요.</string>
+
+    <!-- 동기화 상태 (서버에 올라간 것까지만 확인 가능) -->
+    <string name="parking_sync_off">동기화 꺼짐 · 이 휴대폰에만 저장됨</string>
+    <string name="parking_sync_unpaired">차량과 연결 안 됨 · 이 휴대폰에만 저장됨</string>
+    <string name="parking_sync_pending">차량으로 보낼 예정 (네트워크가 되면 자동 전송)</string>
+    <string name="parking_sync_failed">차량으로 보내지 못해 다시 시도 중 (%1$s)</string>
+    <string name="parking_sync_from_car">차량에서 받은 기록</string>
+    <string name="parking_sync_done">차량 동기화 서버에 올림 · 마지막 확인 %1$s</string>
+
+    <!-- 메인 화면 카드 -->
+    <string name="parking_card_label">최근 주차</string>
+    <string name="parking_card_map">지도 보기</string>
+    <string name="parking_card_edit">위치 수정</string>
+    <string name="parking_card_photo_change">사진 변경</string>
+    <string name="parking_card_photo_add">사진 추가</string>
+    <string name="parking_card_photo_desc">주차 위치 사진</string>
+</resources>

@@ -1,0 +1,55 @@
+<resources>
+    <!-- 백그라운드 호출(플로팅) - 폰 테스트용 -->
+    <string name="floating_entry">백그라운드 호출 설정</string>
+    <string name="floating_entry_on">백그라운드 호출 켜짐</string>
+    <string name="floating_setup_title">상시 호출어 듣기</string>
+    <string name="floating_setup_intro">켜 두면 쁘이를 떠나 카카오톡·유튜브·홈 화면을 쓰는 중에도 호출어를 들을 수 있습니다. 호출어를 말하면 지금 화면 위에 음성비서 창이 뜨고, 명령을 실행한 뒤에도 쁘이로 돌아오지 않고 계속 듣습니다. 켜 두는 동안 다른 앱 위에 작은 쁘이 버튼이 떠 있고, 알림창에 듣기 중지 버튼이 표시됩니다.\n\n[상시 듣기 시작]을 누르면 필요한 권한을 순서대로 요청하고 바로 듣기 시작합니다. 한 번 마치면 다시 묻지 않습니다.</string>
+    <string name="floating_setup_privacy">• 켜져 있는 동안 마이크를 계속 사용하므로 상태 표시줄에 마이크 사용 표시가 나타납니다.\n• 소리는 호출어인지 판단하는 데만 메모리에서 쓰고 저장하거나 외부로 보내지 않습니다.\n• 화면이 꺼지거나 잠겨 있을 때, 통화 중일 때는 듣지 않습니다. 화면을 다시 켜고 잠금을 풀면 자동으로 다시 듣습니다.\n• 음성비서가 대답하는 동안에는 호출어 감지를 멈춰 비서 목소리를 다시 듣지 않습니다.\n• 다른 앱(녹음·통화 앱 등)이 마이크를 쓰면 그동안은 호출어를 들을 수 없습니다.\n• 끄기: 알림의 [듣기 중지], 플로팅 버튼을 길게 눌러 화면 아래 ✕로 끌어 놓기, 또는 이 화면.\n• 휴대전화를 다시 켜거나, 메모리가 부족해 Android가 쁘이를 종료하면 듣기가 멈춥니다. Android 정책상 백그라운드에서 마이크 서비스를 다시 시작할 수 없어 쁘이를 한 번 열면 다시 켜집니다.</string>
+    <string name="floating_status_on">켜짐: 다른 앱을 쓰는 중에도 호출어를 기다립니다</string>
+    <string name="floating_status_off">꺼짐</string>
+    <string name="floating_status_not_ready">호출어 등록과 마이크 권한이 있어야 켤 수 있습니다</string>
+    <string name="floating_turn_on">상시 듣기 시작</string>
+    <string name="setup_flow_later">나중에</string>
+    <string name="setup_flow_no_model">호출어를 등록하지 않아 상시 듣기를 시작하지 않았어요. 등록한 뒤 다시 눌러 주세요.</string>
+    <string name="setup_flow_no_mic">마이크 권한이 없어 상시 듣기를 시작할 수 없어요. 아래 [허용] 버튼으로 다시 허용할 수 있어요.</string>
+    <string name="setup_flow_overlay_toast">다른 앱을 쓰는 중에도 부르려면 쁘이의 \'다른 앱 위에 표시\'를 켜고 돌아와 주세요</string>
+    <string name="setup_flow_done">상시 듣기를 시작했어요. 다른 앱을 쓰는 중에도 호출어를 들어요</string>
+    <string name="setup_flow_done_app_only">상시 듣기를 시작했어요. \'다른 앱 위에 표시\'가 꺼져 있어 쁘이 화면에서만 들어요</string>
+    <string name="floating_turn_off">상시 듣기 끄기</string>
+    <string name="floating_start_failed">상시 듣기를 시작하지 못했습니다. 조건을 확인한 뒤 다시 시도하세요.</string>
+    <string name="floating_req_model_ok">✓ 호출어 등록됨 (\'%1$s\')</string>
+    <string name="floating_req_model_missing">✗ 호출어를 먼저 등록하세요</string>
+    <string name="floating_req_mic_ok">✓ 마이크 권한 허용됨</string>
+    <string name="floating_req_mic_missing">✗ 마이크 권한이 필요합니다</string>
+    <string name="floating_req_notify_ok">✓ 알림 표시 허용됨 (알림창의 듣기 중지 버튼)</string>
+    <string name="floating_req_notify_missing">선택: 알림 표시를 허용하면 알림창에 듣기 중지 버튼이 보입니다 (없어도 듣기는 동작, 플로팅 버튼을 길게 눌러 중지)</string>
+    <string name="floating_req_overlay_ok">✓ 다른 앱 위에 표시 허용됨</string>
+    <string name="floating_req_overlay_missing">✗ 다른 앱을 쓰는 중에 부르려면 \'다른 앱 위에 표시\'가 필요합니다. 음성비서 창을 띄우고, 백그라운드에서 앱을 실행하는 데 씁니다 (없으면 쁘이 화면에서만 듣습니다)</string>
+    <string name="floating_notify_blocked">알림이 꺼져 있습니다. 다음 화면에서 \'알림 허용\'을 켜 주세요.</string>
+    <string name="floating_permission_blocked">권한이 꺼져 있습니다. 앱 정보 &gt; 권한에서 허용하세요.</string>
+
+    <string name="floating_channel_name">호출어 듣기</string>
+    <string name="floating_channel_description">호출어를 상시 듣는 동안 표시됩니다</string>
+    <string name="floating_notification_title">쁘이 음성 호출</string>
+    <string name="floating_action_stop">듣기 중지</string>
+    <string name="floating_action_assist">음성비서</string>
+    <string name="floating_status_listening">\'%1$s\' 호출을 듣고 있습니다</string>
+    <string name="floating_status_assistant">음성비서가 명령을 듣는 중입니다</string>
+    <string name="floating_status_starting">마이크를 여는 중입니다</string>
+    <string name="floating_status_no_overlay">\'다른 앱 위에 표시\'가 꺼져 있어 쁘이 화면에서만 듣습니다</string>
+    <string name="floating_status_in_call">통화 중이라 듣지 않습니다</string>
+    <string name="floating_status_screen_off">화면이 꺼져 있거나 잠겨 있어 듣지 않습니다</string>
+    <string name="floating_status_mic_unavailable">마이크를 열 수 없어 잠시 뒤 다시 시도합니다</string>
+    <string name="floating_status_silenced">다른 앱이 마이크를 쓰는 중이라 들을 수 없습니다</string>
+    <string name="floating_status_no_model">등록된 호출어가 없어 듣지 않습니다</string>
+    <string name="floating_stopped">호출어 듣기를 껐습니다</string>
+    <string name="floating_bubble_description">쁘이 음성비서 (누르면 실행, 길게 눌러 아래 ✕로 끌어 놓으면 끄기)</string>
+    <string name="floating_remove_hint">여기에 놓으면 끄기\n(플로팅 버튼·호출어 듣기)</string>
+    <string name="floating_remove_release">손을 떼면 꺼져요</string>
+    <string name="floating_removed">플로팅 버튼과 호출어 듣기를 껐어요. 쁘이를 열고 [상시 듣기 시작]을 누르면 다시 켜져요</string>
+    <string name="floating_menu_title">플로팅 버튼</string>
+    <string name="floating_menu_hide">버튼 숨기기 (호출어는 계속 듣기)</string>
+    <string name="floating_menu_stop">상시 듣기 종료</string>
+    <string name="floating_bubble_hidden">버튼을 숨겼어요. 호출어는 계속 들어요. 쁘이 설정에서 다시 표시할 수 있어요</string>
+    <string name="floating_open_app">쁘이 열기</string>
+</resources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 차량 ↔ 휴대폰 동기화 (두 빌드 공통) -->
+    <string name="sync_title">차량·휴대폰 동기화</string>
+    <string name="sync_title_car">휴대폰과 동기화</string>
+    <string name="sync_car_button">휴대폰 동기화</string>
+    <string name="sync_title_phone">차량과 동기화</string>
+    <string name="sync_not_configured">이 빌드에는 동기화 서버 설정이 없어요 (local.properties의 supabase.url·supabase.anonKey).</string>
+    <string name="sync_privacy">연결하면 주차 위치·할 일·차에 둔 물건 기록이 이 기기에서 암호화된 뒤 Supabase 서버에 저장돼요. 서버는 내용을 볼 수 없어요. 알림에서 만든 할 일 후보, 저장한 장소, 설정은 보내지 않아요. 차량에서 연결을 해제하면 서버의 기록이 모두 지워지고, 두 기기 안의 데이터는 그대로 남아요.</string>
+
+    <string name="sync_idle_car">휴대폰 쁘이 앱의 Drive To-Do › 차량과 동기화에서 이 차량이 보여 주는 6자리 코드를 입력하면 연결돼요.</string>
+    <string name="sync_idle_phone">차량 쁘이 앱에서 [휴대폰 동기화] › [연결 시작]을 누르면 6자리 코드가 나와요. 그 코드를 여기에 입력하세요.</string>
+    <string name="sync_start_car">연결 시작</string>
+    <string name="sync_start_phone">연결</string>
+    <string name="sync_code_hint">6자리 코드</string>
+    <string name="sync_code_invalid">숫자 6자리를 입력하세요.</string>
+    <string name="sync_code_wrong">코드가 맞지 않거나 만료됐어요. 차량 화면의 코드를 다시 확인하세요.</string>
+    <string name="sync_code_label">휴대폰에 이 코드를 입력하세요</string>
+    <string name="sync_code_expires">%1$d분 %2$02d초 안에 입력하세요</string>
+    <string name="sync_code_expired">코드가 만료됐어요. 다시 시작하세요.</string>
+    <string name="sync_verify_car">확인 번호: 휴대폰 화면의 번호와 같나요?</string>
+    <string name="sync_verify_phone">확인 번호: 차량 화면에 같은 번호가 보이면 차량에서 [같아요]를 누르세요.</string>
+    <string name="sync_verify_same">같아요</string>
+    <string name="sync_verify_different">달라요</string>
+    <string name="sync_rejected_car">연결을 취소했어요. 번호가 다르면 다른 기기가 끼어들었을 수 있어요. 다시 시작하세요.</string>
+    <string name="sync_rejected_phone">차량에서 연결을 거절했거나 코드가 취소됐어요.</string>
+    <string name="sync_wait_timeout">차량의 확인을 받지 못했어요. 처음부터 다시 연결하세요.</string>
+    <string name="sync_cancel">취소</string>
+    <string name="sync_working">서버와 연결하는 중…</string>
+    <string name="sync_driving_blocked">주행 중에는 연결할 수 없어요. 정차한 뒤 다시 시도하세요.</string>
+
+    <string name="sync_paired_car">휴대폰과 연결됨</string>
+    <string name="sync_paired_phone">차량과 연결됨</string>
+    <string name="sync_status_never">아직 동기화 전</string>
+    <string name="sync_status_last">마지막 동기화: %1$s</string>
+    <string name="sync_status_pending">보낼 변경 %1$d개</string>
+    <string name="sync_status_syncing">동기화하는 중…</string>
+    <string name="sync_status_error">마지막 시도 실패: %1$s (자동으로 다시 시도해요)</string>
+    <string name="sync_now">지금 동기화</string>
+    <string name="sync_unpair">연결 해제</string>
+    <string name="sync_unpair_confirm_car">연결을 해제하면 서버에 있는 동기화 기록이 모두 지워지고 휴대폰과의 연결도 끊겨요. 차량과 휴대폰 안의 데이터는 그대로예요.</string>
+    <string name="sync_unpair_confirm_phone">연결을 해제하면 이 휴대폰은 더 이상 차량과 기록을 주고받지 않아요. 휴대폰 안의 데이터는 그대로예요.</string>
+    <string name="sync_unpair_failed">서버에 연결하지 못했어요 (%1$s). 이 기기에서만 해제할까요? 서버에는 연결 기록이 남아 있다가, 차량에서 다시 연결하면 정리돼요.</string>
+    <string name="sync_unpair_local">이 기기에서만 해제</string>
+    <string name="sync_unpaired_note">연결이 해제됐어요: %1$s</string>
+
+    <string name="sync_error_network">인터넷에 연결되지 않았거나 서버가 응답하지 않아요</string>
+    <string name="sync_error_server">서버 오류 (HTTP %1$d)</string>
+    <string name="sync_error_rate">요청이 너무 많아요. 잠시 뒤 다시 시도하세요</string>
+    <string name="sync_error_forbidden">서버가 접근을 거부했어요</string>
+    <string name="sync_error_anon_disabled">Supabase에서 익명 로그인(Anonymous sign-ins)이 꺼져 있어요</string>
+    <string name="sync_error_other">오류 (%1$s)</string>
+    <string name="sync_error_unpaired_remote">상대 기기에서 연결을 해제했거나 새 기기와 연결했어요</string>
+    <string name="sync_error_session_lost">서버 로그인 정보가 만료됐어요. 다시 연결하세요</string>
+    <string name="sync_error_key_lost">이 기기의 보안 키를 읽지 못했어요. 다시 연결하세요</string>
+    <string name="sync_paired_toast">연결됐어요. 기록을 주고받는 중이에요.</string>
+</resources>

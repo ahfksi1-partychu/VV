@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 폰 빌드 양방향 음성 대화 (TTS로 말하는 문장과 화면). 차량용 빌드에는 포함되지 않는다. -->
+<resources>
+    <!-- 비서가 말하는 문장 -->
+    <string name="conv_greeting">네, 말씀하세요!</string>
+    <string name="conv_listening_again">네, 다시 말씀하세요.</string>
+    <string name="conv_no_speech">잘 듣지 못했어요. 다시 말씀해 주세요.</string>
+    <string name="conv_not_understood">잘 알아듣지 못했어요. 다시 한 번 말씀해 주세요.</string>
+    <string name="conv_unknown_command">\'%1$s\'라고 들었는데, 무엇을 할지 잘 모르겠어요. 다시 말씀해 주세요.</string>
+    <string name="conv_bye">필요하면 %1$s, 라고 다시 불러 주세요.</string>
+    <string name="conv_default_wake_name">호출어</string>
+    <string name="conv_ok">알겠어요.</string>
+    <string name="conv_unsupported">죄송해요. 전화 걸기와 새 메시지 보내기는 아직 지원하지 않아요. 다른 명령을 말씀해 주세요.</string>
+    <string name="conv_opening">%1$s 열게요.</string>
+    <string name="conv_app_not_found">%1$s 앱을 찾지 못했어요. 앱 이름을 다시 말씀해 주세요.</string>
+    <string name="conv_app_not_installed">%1$s 앱이 설치되어 있지 않아요.</string>
+    <string name="conv_app_disabled">%1$s 앱이 사용 중지되어 있어 열 수 없어요.</string>
+    <string name="conv_app_blocked">주행 중에는 %1$s 앱을 열 수 없어요.</string>
+    <string name="conv_app_failed">%1$s 앱을 열지 못했어요.</string>
+    <string name="conv_choose_app">%1$s 중에서 어떤 앱을 열까요?</string>
+    <string name="conv_choose_again">어떤 앱인지 알아듣지 못했어요. 앱 이름이나 첫 번째, 두 번째처럼 말씀해 주세요.</string>
+
+    <string name="conv_reading">최근 메시지를 읽어드릴게요.</string>
+    <string name="conv_offer_reply">답장할까요?</string>
+    <string name="conv_after_read_no_reply">이 메시지에는 답장할 수 없어요.</string>
+    <string name="conv_no_messages">새로 온 메시지가 없어요.</string>
+    <string name="conv_no_messages_for_app">%1$s에서 온 메시지가 없어요.</string>
+    <string name="conv_messages_not_connected">메시지 알림 연결을 아직 기다리는 중이에요. 잠시 뒤에 다시 말씀해 주세요.</string>
+    <string name="conv_messages_unsupported">이 기기에서는 메시지 읽기를 지원하지 않아요.</string>
+    <string name="conv_messages_need_access">알림 접근이 허용되지 않아 메시지를 읽을 수 없어요. 화면의 버튼으로 허용할 수 있어요.</string>
+    <string name="conv_reply_without_message">답장할 메시지가 없어요. 먼저 최근 메시지 읽어줘, 라고 말씀해 주세요.</string>
+    <string name="conv_reply_not_supported">%1$s 알림에서는 답장을 보낼 수 없어요.</string>
+    <string name="conv_ask_reply_body">%1$s에게 뭐라고 답장할까요?</string>
+    <string name="conv_confirm_reply">%1$s에게 %2$s, 라고 보낼까요?</string>
+    <string name="conv_confirm_again">보내려면 응, 그만두려면 아니, 라고 말씀해 주세요. 받는 사람은 %1$s, 보낼 내용은 %2$s, 입니다.</string>
+    <string name="conv_reply_sent">%1$s에게 답장을 보냈어요.</string>
+
+    <!-- 사람 이름으로 찾기 (비슷한 이름) -->
+    <string name="conv_person_confirm">%1$s 말씀하시는 거죠?</string>
+    <string name="conv_person_choose">%1$s 중에서 누구인가요?</string>
+    <string name="conv_person_choose_again">누구인지 알아듣지 못했어요. 이름이나 첫 번째, 두 번째처럼 말씀해 주세요.</string>
+    <string name="conv_person_ask">누구인지 이름을 다시 말씀해 주세요.</string>
+    <string name="conv_person_not_found">%1$s, 와 비슷한 이름을 찾지 못했어요. 이름을 다시 말씀해 주세요.</string>
+    <string name="conv_person_not_found_end">%1$s, 와 비슷한 이름을 지금 와 있는 메시지 알림에서 찾지 못했어요.</string>
+    <!-- 검색 후보가 하나도 없을 때 (이름이 달라서가 아님). 카카오톡 친구 목록은 읽을 수 없다 -->
+    <string name="conv_person_no_candidates">지금 와 있는 메시지 알림이 없어서 %1$s, 을 찾을 수 없어요. 카카오톡 친구는 알림이 와 있을 때만 찾을 수 있어요.</string>
+    <string name="conv_person_no_candidates_contacts_off">지금 와 있는 메시지 알림이 없어서 %1$s, 을 찾을 수 없어요. 카카오톡 친구는 알림이 와 있을 때만 찾을 수 있어요.</string>
+    <string name="conv_reading_from">%1$s의 최근 메시지를 읽어드릴게요.</string>
+    <string name="conv_no_messages_from">%1$s에게서 온 메시지 알림이 지금은 없어요. 알림으로 새로 온 메시지만 읽을 수 있어요.</string>
+    <string name="conv_reply_needs_message">%1$s에게서 온 메시지 알림이 없어서 보낼 수 없어요. 카카오톡 친구 목록은 읽을 수 없어서, 알림이 와 있는 사람에게만 답장할 수 있어요.</string>
+    <!-- 대화방 열기: 알림의 링크로만 연다 -->
+    <string name="conv_opening_room">%2$s에서 %1$s 대화방을 열게요.</string>
+    <string name="conv_open_needs_message">%1$s에게서 온 메시지 알림이 없어서 대화방을 바로 열 수 없어요. 알림이 와 있는 대화방만 열 수 있어요.</string>
+    <string name="conv_open_failed">%1$s 대화방을 열지 못했어요.</string>
+    <string name="conv_room">%1$s 방</string>
+    <!-- 앱 이름과 사람 이름 가리기·되묻기 -->
+    <string name="conv_ask_open_or_read">%1$s 앱을 열까요, 알림을 읽을까요?</string>
+    <string name="conv_ask_app_or_person">%1$s 앱의 알림을 읽을까요, %2$s에게서 온 메시지를 읽을까요?</string>
+    <string name="conv_confirm_app_open">%1$s 앱을 열까요?</string>
+    <string name="conv_confirm_app_read">%1$s 앱의 알림을 읽을까요?</string>
+    <string name="conv_clarify_again">잘 알아듣지 못했어요. %1$s</string>
+    <string name="conv_clarify_end">어떤 것인지 알아듣지 못해서 아무것도 하지 않을게요.</string>
+    <string name="conv_read_app_not_found">%1$s, 와 비슷한 이름의 앱을 찾지 못했어요.</string>
+    <string name="conv_reading_app">%1$s 앱의 최근 알림을 읽어드릴게요.</string>
+    <string name="conv_no_app_notifications">%1$s 앱의 알림이 지금은 없어요. 알림으로 와 있는 내용만 읽을 수 있어요.</string>
+    <string name="conv_read_notification">%1$s 알림입니다. %2$s. %3$s</string>
+    <string name="conv_read_notification_untitled">%1$s 알림입니다. %2$s</string>
+    <string name="conv_after_read_notification">이 알림에는 답장할 수 없어요.</string>
+    <string name="conv_read_message">%1$s, %2$s의 메시지입니다. %3$s</string>
+    <string name="conv_read_message_group">%1$s, %4$s에서 %2$s의 메시지입니다. %3$s</string>
+    <string name="conv_reply_cancelled">답장을 보내지 않을게요.</string>
+    <string name="conv_reply_not_sent">대답을 듣지 못해서 답장을 보내지 않았어요.</string>
+    <string name="conv_reply_gone">메시지 알림이 사라져서 답장을 보내지 못했어요.</string>
+    <string name="conv_reply_failed">답장을 보내지 못했어요.</string>
+
+    <string name="conv_need_mic">마이크 권한이 없어 들을 수 없어요. 화면의 버튼으로 허용할 수 있어요.</string>
+    <!-- 권한 허용 화면을 띄우기 직전에 말한다 -->
+    <string name="conv_permission_mic">마이크 권한이 필요해요. 허용 창을 띄울게요.</string>
+    <string name="conv_permission_notifications">메시지를 읽으려면 알림 접근 허용이 필요해요. 설정 화면을 열게요. 쁘이를 켜고 돌아오면 이어서 읽어드릴게요.</string>
+    <string name="conv_permission_contacts">연락처에서도 찾아볼게요. 연락처 권한 허용 창을 띄울게요.</string>
+    <string name="conv_need_stt_consent">이 기기에는 기기 안 음성 인식이 없어요. 차를 세운 뒤 화면에서 시스템 음성 인식 사용을 허용해 주세요.</string>
+    <string name="conv_stt_unavailable">이 기기에서 음성 인식을 사용할 수 없어요.</string>
+    <string name="conv_stt_error">음성 인식에 문제가 생겼어요. 잠시 뒤에 다시 불러 주세요.</string>
+    <string name="conv_stt_network">음성 인식에 네트워크 연결이 필요해요.</string>
+    <string name="conv_stt_language">한국어 음성 인식 언어 팩이 설치되어 있지 않아요.</string>
+    <string name="conv_mic_busy">다른 앱이 마이크를 쓰고 있어서 들을 수 없어요.</string>
+
+    <!-- 대화 화면 -->
+    <string name="conv_title">음성비서</string>
+    <string name="conv_phase_speaking">말하는 중</string>
+    <string name="conv_phase_listening">● 듣는 중 · 말씀하세요</string>
+    <string name="conv_phase_working">잠시만요…</string>
+    <string name="conv_phase_permission">권한 허용 화면에서 선택해 주세요</string>
+    <string name="conv_phase_ended">대화가 끝났어요</string>
+    <string name="conv_text_only">음성 출력을 쓸 수 없어 글자로 보여드려요 (설정 › 음성 및 말하기 확인)</string>
+    <string name="conv_you_said">나: %1$s</string>
+    <string name="conv_stop">그만하기</string>
+    <string name="conv_talk_again">다시 말하기</string>
+    <string name="conv_send">보내기</string>
+    <string name="conv_dont_send">보내지 않기</string>
+    <string name="conv_allow_mic">마이크 권한 허용</string>
+    <string name="conv_allow_notifications">알림 접근 허용</string>
+    <string name="conv_allow_system_stt">시스템 음성 인식 허용</string>
+    <string name="conv_system_stt_message">기기 안 음성 인식기가 없어 시스템 음성 인식을 씁니다. 시스템 인식기는 음성을 서버로 보낼 수 있습니다. 허용할까요?</string>
+    <string name="conv_open_app">쁘이 열기</string>
+    <string name="conv_close">닫기</string>
+
+    <!-- 음성 및 말하기 설정 -->
+    <string name="voice_settings_title">음성 및 말하기</string>
+    <string name="voice_settings_entry_summary">말하기 속도 %1$s배\n목소리 선택 · 미리 듣기 · 차량 블루투스</string>
+    <string name="voice_section_voice">목소리</string>
+    <string name="voice_female">여성 목소리</string>
+    <string name="voice_male">남성 목소리</string>
+    <string name="voice_female_n">여성 목소리 %1$d</string>
+    <string name="voice_male_n">남성 목소리 %1$d</string>
+    <string name="voice_other_n">목소리 %1$d</string>
+    <string name="voice_default">기본</string>
+    <string name="voice_none_for_gender">이 기기의 한국어 음성에는 %1$s가 없어요</string>
+    <string name="voice_engine">음성 엔진: %1$s · 기기 안에서 쓸 수 있는 한국어 음성 %2$d개</string>
+    <string name="voice_unknown_gender_note">음성 엔진이 성별 정보를 알려주지 않는 음성은 번호로 보여드려요. 미리 듣기로 골라 주세요.</string>
+    <string name="voice_loading">음성 목록을 확인하는 중…</string>
+    <string name="voice_unavailable">기기 안에서 쓸 수 있는 한국어 음성이 없어요. 휴대폰 설정 › 텍스트 음성 변환에서 한국어 음성 데이터를 설치해 주세요.</string>
+    <string name="voice_preview">미리 듣기</string>
+    <string name="voice_preview_text">안녕하세요, 뿡뿡이예요. 이 목소리와 속도로 안내해 드릴게요.</string>
+    <string name="voice_section_rate">말하기 속도</string>
+    <string name="voice_rate_value">%1$s배</string>
+    <string name="voice_rate_min">0.5배</string>
+    <string name="voice_rate_max">2.0배</string>
+    <string name="voice_rate_note">메시지 읽기와 모든 음성 안내에 적용돼요.</string>
+    <string name="voice_rate_reset">기본 속도(1.0배)</string>
+    <string name="voice_section_output">자동차 블루투스</string>
+    <string name="voice_output_bluetooth">음성 안내: 블루투스 기기 %1$s(으)로 출력돼요 (시스템이 자동으로 선택).</string>
+    <string name="voice_output_phone">음성 안내: 휴대폰 스피커로 출력돼요. 차량과 블루투스(미디어)로 연결하면 차량 스피커로 나와요.</string>
+    <string name="voice_input_bluetooth_mic">차량 마이크: 연결된 블루투스 기기에 마이크가 있지만, 음성 인식은 아직 휴대폰 마이크를 써요 (차량 마이크 입력 미지원).</string>
+    <string name="voice_input_phone_mic">음성 인식: 휴대폰 마이크를 써요. 차량 마이크 입력은 아직 지원하지 않아요.</string>
+    <!-- 음성 안내 음량 확인 (ConversationView) -->
+    <string name="conv_volume_low">음성 안내 음량이 작아요. 소리를 높여주세요.</string>
+    <string name="conv_volume_up">음량 높이기</string>
+    <string name="conv_volume_phone">휴대폰 스피커</string>
+    <string name="conv_volume_bluetooth">블루투스 %1$s</string>
+    <string name="conv_volume_bluetooth_unnamed">블루투스 기기</string>
+    <string name="conv_volume_detail">출력: %1$s · 음량 %2$d/%3$d</string>
+    <string name="conv_volume_detail_muted">출력: %1$s · 음소거</string>
+</resources>

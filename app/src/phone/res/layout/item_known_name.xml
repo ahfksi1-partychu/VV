@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 등록한 이름 한 줄 (KnownNamesActivity) -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/SettingsRow">
+
+    <TextView
+        android:id="@+id/knownName"
+        style="@style/SettingsRowText"
+        android:textSize="17sp" />
+
+    <Button
+        android:id="@+id/knownNameDelete"
+        style="@style/SettingsRowButton"
+        android:text="@string/known_names_delete" />
+</LinearLayout>

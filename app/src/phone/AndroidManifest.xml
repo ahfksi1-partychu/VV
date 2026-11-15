@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    스마트폰 테스트용(phone flavor) manifest. main manifest 위에 병합된다.
+    차량용(car) 빌드에는 포함되지 않는다.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- 차량 전용 선언 해제: 일반 스마트폰에도 설치 가능하게 한다 -->
+    <uses-feature
+        android:name="android.hardware.type.automotive"
+        android:required="false"
+        tools:replace="android:required" />
+
+    <!--
+        백그라운드 호출(플로팅): 다른 앱 위 버튼·음성비서 창, 마이크 포그라운드 서비스, 듣기 중지 알림.
+        폰 테스트용 빌드에만 선언한다 (차량용 빌드에는 포함되지 않음).
+    -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+    <!-- Drive To-Do: 차량 블루투스가 끊긴 뒤 주차 위치를 얻는 짧은 서비스 (type=location) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!--
+        음성 알림·타이머: 지정한 시각에 정확히 울리는 알람 (앱이 꺼져 있거나 화면이 꺼져 있어도).
+        Android 13+는 USE_EXACT_ALARM(설치 시 허용), 12L 이하는 SCHEDULE_EXACT_ALARM.
+        재부팅·앱 업데이트 뒤 남은 알림을 다시 등록한다.
+    -->
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+    <uses-permission
+        android:name="android.permission.SCHEDULE_EXACT_ALARM"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- 선택: 음성 명령의 이름을 연락처 이름과 비교 (비슷한 이름 찾기). 기기 안에서만 읽고 저장하지 않는다 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <!--
+        Drive To-Do: 주차 위치 저장(위치), 사용자가 고른 차량 블루투스 연결·끊김 감지(근처 기기).
+        앱이 꺼져 있을 때 차량 블루투스가 끊기면 위치를 얻기 위해 '항상 허용'(백그라운드 위치)을 사용자가 고를 수 있다.
+        위치·할 일은 기기 안에만 저장한다.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission
+        android:name="android.permission.BLUETOOTH"
+        android:maxSdkVersion="30" />
+
+    <!-- Drive To-Do: 주차 위치를 열 지도 앱(geo: 링크)이 있는지 확인 (없으면 웹 지도로 연다). 모든 앱 조회 권한은 쓰지 않는다. -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="geo" />
+        </intent>
+    </queries>
+
+    <!-- 전용 아이콘: 설정 앱의 권한 목록에서 기본 안드로이드 아이콘 앱들과 구분되게 한다 (car 빌드는 기존 그대로) -->
+    <application
+        android:icon="@mipmap/ic_launcher_phone"
+        android:roundIcon="@mipmap/ic_launcher_phone">
+        <!-- 폰은 세로 화면 고정 (레이아웃은 src/phone/res/layout 의 세로용이 main 을 덮어씀). 차량용은 main 그대로 -->
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            tools:node="merge" />
+        <activity
+            android:name=".ui.WakeWordSetupActivity"
+            android:screenOrientation="portrait"
+            tools:node="merge" />
+        <activity
+            android:name=".ui.AssistantActivity"
+            android:screenOrientation="portrait"
+            tools:node="merge" />
+
+        <!--
+            메시지 읽기·답장용 알림 접근 (폰 테스트용 빌드만). 사용자가 설정에서 직접 허용해야 동작한다.
+            차량용(car) 빌드에는 선언하지 않는다: Android Automotive에서는 차량 기본 음성비서 전용 기능이다.
+        -->
+        <service
+            android:name=".phone.MessageListenerService"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
+        <!-- 알림 접근 설정 화면 열기 → 돌아오면 허용 여부 확인 (화면 없음) -->
+        <activity
+            android:name=".phone.NotificationAccessActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- 설정: 호출어 재등록·삭제, 권한, 즐겨찾기 표시 (메인 화면에서 옮김) -->
+        <activity
+            android:name=".phone.PhoneSettingsActivity"
+            android:exported="false"
+            android:label="@string/phone_settings_title"
+            android:screenOrientation="portrait" />
+
+        <!-- 양방향 음성 대화 화면: 호출어·[직접 음성비서 실행]으로 열린다. 메시지가 보일 수 있어 최근 앱 목록에 남기지 않는다 -->
+        <activity
+            android:name=".phone.conversation.PhoneAssistantActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/conv_title"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 설정 › 음성 및 말하기: 목소리·말하기 속도·자동차 블루투스 -->
+        <activity
+            android:name=".phone.conversation.VoiceSettingsActivity"
+            android:exported="false"
+            android:label="@string/voice_settings_title"
+            android:screenOrientation="portrait" />
+
+        <!-- 백그라운드 호출어 감지 (type=microphone: Android 14+ 필수). 앱 화면에서만 시작한다. -->
+        <service
+            android:name=".phone.floating.FloatingVoiceService"
+            android:exported="false"
+            android:foregroundServiceType="microphone" />
+
+        <activity
+            android:name=".phone.floating.FloatingVoiceSetupActivity"
+            android:exported="false"
+            android:label="@string/floating_setup_title"
+            android:screenOrientation="portrait" />
+
+        <!--
+            기능 실행 중 권한 요청 (권한 창·알림 접근·다른 앱 위에 표시 설정). 화면 없는 투명 화면.
+            자체 작업으로 열려 끝나면 쓰던 앱(카카오톡 등)으로 그대로 돌아간다.
+        -->
+        <activity
+            android:name=".phone.PermissionRequestActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- 설정 › 자주 연락하는 사람: 카카오톡 친구 이름 직접 등록 (이름만 기기에 저장) -->
+        <activity
+            android:name=".phone.KnownNamesActivity"
+            android:exported="false"
+            android:label="@string/known_names_title"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Drive To-Do: 마지막 주차 위치 확인하기, 할 일, 알림 후보, 설정 -->
+        <activity
+            android:name=".phone.drive.DriveTodoActivity"
+            android:exported="false"
+            android:label="@string/drive_title"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Drive To-Do: 사용자가 고른 차량 블루투스 연결(운전 시작)·끊김(주차 위치 저장) -->
+        <receiver
+            android:name=".phone.drive.CarBluetoothReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.bluetooth.device.action.ACL_CONNECTED" />
+                <action android:name="android.bluetooth.device.action.ACL_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+
+        <!--
+            주차 위치 기록: 구역·번호 입력, 기둥·안내판 사진. '주차 위치를 기록하시겠습니까?' 알림·메인 카드에서 열린다.
+            사진은 카메라 앱(ACTION_IMAGE_CAPTURE)·사진 선택기로 받아 카메라·사진 읽기 권한을 선언하지 않는다.
+        -->
+        <activity
+            android:name=".phone.drive.ParkingRecordActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/parking_record_title"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- 기록 안내 알림의 [건너뛰기]·밀어서 지우기 (앱 안에서만) -->
+        <receiver
+            android:name=".phone.drive.ParkingPromptReceiver"
+            android:exported="false" />
+
+        <!--
+            카메라 앱이 촬영한 주차 사진을 쓸 임시 파일 하나 (files/parking_photos/capture.tmp).
+            외부 공개 안 함: 촬영을 요청할 때만 그 카메라 앱에 이 주소의 쓰기 권한을 잠시 준다.
+        -->
+        <provider
+            android:name="com.mycarhub.drive.ParkingCaptureProvider"
+            android:authorities="${applicationId}.parkingphoto"
+            android:exported="false"
+            android:grantUriPermissions="true" />
+
+        <!-- Drive To-Do: 블루투스가 끊긴 뒤 주차 위치를 한 번 얻고 끝나는 서비스 -->
+        <service
+            android:name=".phone.drive.PhoneParkingService"
+            android:exported="false"
+            android:foregroundServiceType="location" />
+
+        <!-- 음성 알림·타이머: 알람 시각에 알림을 띄움 / 재부팅·업데이트 뒤 다시 등록 -->
+        <receiver
+            android:name=".phone.reminder.ReminderReceiver"
+            android:exported="false" />
+        <receiver
+            android:name=".phone.reminder.ReminderRestoreReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 음성 화면 조작 (뒤로·스크롤·검색창 입력·버튼 누르기). 사용자가 설정 > 접근성에서 직접 켜야 동작한다. -->
+        <service
+            android:name=".phone.control.ScreenControlService"
+            android:exported="true"
+            android:label="@string/control_service_label"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/screen_control_service" />
+        </service>
+
+        <!-- 앱 시작 시 '폰 테스트 빌드 · 차량 기능 미지원' 표시를 모든 화면 위에 붙인다 (main 코드 변경 없음) -->
+        <provider
+            android:name=".phone.PhoneTestNotice"
+            android:authorities="${applicationId}.phonetest"
+            android:exported="false" />
+    </application>
+</manifest>

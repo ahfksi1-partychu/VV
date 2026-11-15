@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 자주 연락하는 사람 이름 (카카오톡 친구 이름 직접 등록, KnownNamesActivity) -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/phone_bg"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/known_names_title"
+            android:textColor="@color/phone_text"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            style="@style/SettingsNote"
+            android:layout_marginTop="8dp"
+            android:text="@string/known_names_intro"
+            android:textColor="@color/phone_text_secondary"
+            android:textSize="14sp" />
+
+        <LinearLayout style="@style/SettingsRow">
+
+            <EditText
+                android:id="@+id/knownNameInput"
+                style="@style/SettingsRowText"
+                android:hint="@string/known_names_hint"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:maxLength="30"
+                android:minHeight="48dp" />
+
+            <Button
+                android:id="@+id/knownNameAdd"
+                style="@style/SettingsRowButton"
+                android:text="@string/known_names_add" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/knownNamesImport"
+            style="@style/PhoneOutlineButton"
+            android:layout_marginTop="12dp"
+            android:text="@string/known_names_import" />
+
+        <TextView
+            style="@style/SettingsNote"
+            android:text="@string/known_names_import_note" />
+
+        <TextView
+            android:id="@+id/knownNamesCount"
+            style="@style/SettingsSection" />
+
+        <TextView
+            android:id="@+id/knownNamesEmpty"
+            style="@style/SettingsNote"
+            android:text="@string/known_names_empty" />
+
+        <LinearLayout
+            android:id="@+id/knownNamesList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </LinearLayout>
+</ScrollView>

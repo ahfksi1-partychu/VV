@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 폰 테스트용 설정 화면: 호출어 듣기, 호출어 재등록·삭제, 권한, 즐겨찾기 표시 (PhoneSettingsActivity) -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/phone_bg"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/phone_settings_title"
+            android:textColor="@color/phone_text"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <!-- 호출어 듣기 -->
+        <TextView
+            style="@style/SettingsSection"
+            android:text="@string/phone_settings_listen" />
+
+        <Switch
+            android:id="@+id/settingsListen"
+            style="@style/SettingsSwitch"
+            android:text="@string/phone_listen_switch" />
+
+        <TextView
+            style="@style/SettingsNote"
+            android:text="@string/phone_listen_note" />
+
+        <LinearLayout style="@style/SettingsRow">
+
+            <TextView
+                android:id="@+id/settingsFloatingText"
+                style="@style/SettingsRowText" />
+
+            <Button
+                android:id="@+id/settingsFloatingButton"
+                style="@style/SettingsRowButton"
+                android:text="@string/phone_change" />
+        </LinearLayout>
+
+        <Switch
+            android:id="@+id/settingsShowBubble"
+            style="@style/SettingsSwitch"
+            android:text="@string/phone_show_bubble" />
+
+        <TextView
+            style="@style/SettingsNote"
+            android:text="@string/phone_show_bubble_note" />
+
+        <!-- 음성 및 말하기 (목소리·속도·블루투스) -->
+        <TextView
+            style="@style/SettingsSection"
+            android:text="@string/voice_settings_title" />
+
+        <LinearLayout style="@style/SettingsRow">
+
+            <TextView
+                android:id="@+id/settingsVoiceText"
+                style="@style/SettingsRowText" />
+
+            <Button
+                android:id="@+id/settingsVoiceButton"
+                style="@style/SettingsRowButton"
+                android:text="@string/phone_change" />
+        </LinearLayout>
+
+        <!-- 호출어 -->
+        <TextView
+            style="@style/SettingsSection"
+            android:text="@string/phone_settings_wake" />
+
+        <TextView
+            android:id="@+id/settingsWakeName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/phone_text"
+            android:textSize="17sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/settingsRegister"
+                style="@style/PhoneOutlineButton"
+                android:layout_width="0dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/settingsDelete"
+                style="@style/PhoneOutlineButton"
+                android:layout_width="0dp"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:text="@string/voice_delete" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/SettingsNote"
+            android:text="@string/phone_settings_wake_note" />
+
+        <!-- 권한 -->
+        <TextView
+            style="@style/SettingsSection"
+            android:text="@string/phone_settings_permissions" />
+
+        <LinearLayout style="@style/SettingsRow">
+
+            <TextView
+                android:id="@+id/settingsMicText"
+                style="@style/SettingsRowText" />
+
+            <Button
+                android:id="@+id/settingsMicButton"
+                style="@style/SettingsRowButton"
+                android:text="@string/phone_allow" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/settingsMessagesRow"
+            style="@style/SettingsRow">
+
+            <TextView
+                android:id="@+id/settingsMessagesText"
+                style="@style/SettingsRowText" />
+
+            <Button
+                android:id="@+id/settingsMessagesButton"
+                style="@style/SettingsRowButton" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/SettingsRow">
+
+            <TextView
+                android:id="@+id/settingsContactsText"
+                style="@style/SettingsRowText" />
+
+            <Button
+                android:id="@+id/settingsContactsButton"
+                style="@style/SettingsRowButton"
+                android:text="@string/phone_allow" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/SettingsRow">
+
+            <TextView
+                style="@style/SettingsRowText"
+                android:text="@string/phone_perm_app_info"
+                android:textColor="@color/phone_text_secondary" />
+
+            <Button
+                android:id="@+id/settingsAppInfo"
+                style="@style/SettingsRowButton"
+                android:text="@string/phone_app_info" />
+        </LinearLayout>
+
+        <!-- 자주 연락하는 사람 (카카오톡 친구 이름 직접 등록) -->
+        <TextView
+            style="@style/SettingsSection"
+            android:text="@string/phone_settings_names" />
+
+        <LinearLayout style="@style/SettingsRow">
+
+            <TextView
+                android:id="@+id/settingsNamesText"
+                style="@style/SettingsRowText" />
+
+            <Button
+                android:id="@+id/settingsNamesButton"
+                style="@style/SettingsRowButton"
+                android:text="@string/phone_change" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/SettingsNote"
+            android:text="@string/phone_names_note" />
+
+        <!-- 즐겨찾기 -->
+        <TextView
+            style="@style/SettingsSection"
+            android:text="@string/phone_settings_favorites" />
+
+        <Switch
+            android:id="@+id/settingsShowFavorites"
+            style="@style/SettingsSwitch"
+            android:text="@string/phone_show_favorites" />
+
+        <TextView
+            android:id="@+id/settingsFavoritesCount"
+            style="@style/SettingsNote" />
+
+        <!-- 개발 빌드에서만 표시 (측정 화면은 src/debug 에만 있음) -->
+        <LinearLayout
+            android:id="@+id/settingsDevSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/SettingsSection"
+                android:text="@string/phone_settings_dev" />
+
+            <Button
+                android:id="@+id/settingsMeasure"
+                style="@style/PhoneOutlineButton"
+                android:layout_marginTop="8dp"
+                android:text="@string/voice_measure" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

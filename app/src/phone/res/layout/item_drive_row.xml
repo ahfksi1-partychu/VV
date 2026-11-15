@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 글자 + 버튼 두 개 한 줄 (할 일 후보 [추가] [무시], 장소 [현재 위치로] [삭제]) (DriveTodoActivity) -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/SettingsRow">
+
+    <TextView
+        android:id="@+id/rowText"
+        style="@style/SettingsRowText" />
+
+    <Button
+        android:id="@+id/rowPrimary"
+        style="@style/SettingsRowButton" />
+
+    <Button
+        android:id="@+id/rowSecondary"
+        style="@style/SettingsRowButton" />
+</LinearLayout>

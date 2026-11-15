@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    폰 테스트용 음성비서 화면 (세로). main/res/layout/activity_assistant.xml 을 덮어쓴다.
+    버튼과 앱 선택지는 세로로 쌓고 전체를 세로 스크롤한다. id와 뷰 종류는 main과 같아야 한다.
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:text="@string/assistant_title"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/assistantState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <ProgressBar
+            android:id="@+id/assistantLevel"
+            style="@android:style/Widget.DeviceDefault.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:max="100" />
+
+        <ProgressBar
+            android:id="@+id/assistantBusy"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
+            android:indeterminate="true"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/assistantHeard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:maxLines="3"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/assistantDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:alpha="0.85"
+            android:gravity="center"
+            android:maxLines="8"
+            android:textSize="16sp" />
+
+        <!-- 앱 선택지: 코드가 버튼을 넣는다. 세로로 쌓아 화면 폭을 넘지 않게 한다 -->
+        <LinearLayout
+            android:id="@+id/assistantChoices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:minHeight="16dp" />
+
+        <!-- 상태에 맞는 버튼만 보인다 (보통 1~3개) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/assistantDoneSpeaking"
+                style="@style/StackButton"
+                android:text="@string/assistant_done_speaking" />
+
+            <Button
+                android:id="@+id/assistantSkip"
+                style="@style/StackButton"
+                android:text="@string/assistant_skip" />
+
+            <Button
+                android:id="@+id/assistantSend"
+                style="@style/StackButton"
+                android:text="@string/assistant_send" />
+
+            <Button
+                android:id="@+id/assistantDontSend"
+                style="@style/StackButton"
+                android:text="@string/assistant_dont_send" />
+
+            <Button
+                android:id="@+id/assistantNotificationAccess"
+                style="@style/StackButton"
+                android:text="@string/assistant_notification_access" />
+
+            <Button
+                android:id="@+id/assistantRetry"
+                style="@style/StackButton"
+                android:text="@string/assistant_retry" />
+
+            <Button
+                android:id="@+id/assistantGrant"
+                style="@style/StackButton"
+                android:text="@string/mic_permission_allow" />
+
+            <Button
+                android:id="@+id/assistantSettings"
+                style="@style/StackButton"
+                android:text="@string/open_app_settings" />
+
+            <Button
+                android:id="@+id/assistantAllowSystemStt"
+                style="@style/StackButton"
+                android:text="@string/assistant_allow_system_stt" />
+
+            <Button
+                android:id="@+id/assistantClose"
+                style="@style/StackButton"
+                android:text="@string/assistant_close" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

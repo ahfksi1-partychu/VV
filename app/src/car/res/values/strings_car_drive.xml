@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 차량용(car) 빌드: Drive To-Do 주차 위치 자동 저장 -->
+<resources>
+    <string name="car_parking_channel">주차 위치 자동 저장</string>
+    <string name="car_parking_notice_title">주차 위치 자동 저장 켜짐</string>
+    <string name="car_parking_notice_text">기어 P와 시동 꺼짐을 확인하면 마지막 주차 위치를 차량에 저장해요.</string>
+</resources>

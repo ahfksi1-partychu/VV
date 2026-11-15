@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-feature
+        android:name="android.hardware.type.automotive"
+        android:required="true" />
+
+    <!-- Pleos 권한은 사용하는 도메인만 선언 (예: pleos.car.permission.CAR_INFO) -->
+
+    <!--
+        개인 호출어 등록·감지와 음성 명령 인식. 화면이 열려 있을 때만 사용하며 호출어 녹음은 기기 내부에만 저장한다.
+        음성 명령은 기기 내 인식기를 기본으로 쓰고, 시스템 인식기는 사용자가 허용한 경우에만 쓴다.
+    -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!--
+        차량 ↔ 휴대폰 Drive To-Do 동기화 (사용자가 페어링한 경우에만). 서버(Supabase)로는 기기에서 암호화한
+        주차 위치·할 일·차에 둔 물건 기록만 보낸다. 네트워크 복구 감지에 ACCESS_NETWORK_STATE.
+    -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- 마이크가 없는 기기에도 설치는 가능 (즐겨찾기 앱 기능은 그대로 동작) -->
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="false" />
+
+    <!--
+        Android 11+ 패키지 가시성: QUERY_ALL_PACKAGES 대신
+        런처에서 실행 가능한 앱과 홈 앱(목록에서 제외용)만 조회한다.
+    -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.HOME" />
+        </intent>
+        <!-- 음성 명령 인식(SpeechRecognizer)이 시스템 음성 인식 서비스에 연결하기 위해 필요 -->
+        <intent>
+            <action android:name="android.speech.RecognitionService" />
+        </intent>
+    </queries>
+
+    <application
+        android:name=".MyCarHubApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.DeviceDefault.NoActionBar">
+
+        <!-- 주행 제한(CarUxRestrictions) 조회용. 차량 라이브러리가 없는 기기에서도 설치는 가능하게 한다. -->
+        <uses-library
+            android:name="android.car"
+            android:required="false" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- 주행 중에도 실행 가능하도록 표시 (편집 기능은 앱 내부에서 주행 중 차단) -->
+            <meta-data
+                android:name="distractionOptimized"
+                android:value="true" />
+        </activity>
+
+        <!--
+            음성비서 화면: 음성 명령은 주행 중에도 쓰므로 distractionOptimized.
+            글자 입력이 없고, 권한 요청·설정 이동 등은 화면 안에서 주행 중 차단한다.
+        -->
+        <activity
+            android:name=".ui.AssistantActivity"
+            android:exported="false"
+            android:launchMode="singleTop">
+            <meta-data
+                android:name="distractionOptimized"
+                android:value="true" />
+        </activity>
+
+        <!-- 글자 입력·녹음이 필요해 주행 중 사용 불가 (distractionOptimized 미지정) -->
+        <activity
+            android:name=".ui.WakeWordSetupActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- 차량 ↔ 휴대폰 동기화 연결 화면: 코드·확인 번호를 보고 비교해야 해서 주행 중 사용 불가 (distractionOptimized 미지정) -->
+        <activity
+            android:name=".drive.DriveSyncActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- 앱이 꺼져 있을 때 네트워크가 있으면 동기화 (페어링한 경우만 예약) -->
+        <service
+            android:name=".drive.DriveSyncJobService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+    </application>
+</manifest>

@@ -1,0 +1,9 @@
+<!-- 명령 예시·안내 줄 배경 -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android" android:color="#22FFFFFF">
+    <item>
+        <shape>
+            <corners android:radius="14dp" />
+            <solid android:color="@color/phone_surface" />
+        </shape>
+    </item>
+</ripple>

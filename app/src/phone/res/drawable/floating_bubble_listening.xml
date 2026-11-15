@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 플로팅 버튼: 호출어 듣는 중 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
+    <solid android:color="#E61E88E5" />
+    <stroke android:width="2dp" android:color="#FFFFFFFF" />
+</shape>

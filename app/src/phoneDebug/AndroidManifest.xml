@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 폰 개발 빌드(phoneDebug) 전용: ADB 명령 테스트 수신기. 셸만 보낼 수 있도록 DUMP 권한을 요구한다. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <receiver
+            android:name="com.mycarhub.phone.debug.DebugCommandReceiver"
+            android:exported="true"
+            android:permission="android.permission.DUMP" />
+    </application>
+</manifest>

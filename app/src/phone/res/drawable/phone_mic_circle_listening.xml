@@ -1,0 +1,7 @@
+<!-- 메인 화면 마이크 원 (실제로 듣는 중) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
+    <solid android:color="#40FFC400" />
+    <stroke
+        android:width="3dp"
+        android:color="@color/phone_accent" />
+</shape>

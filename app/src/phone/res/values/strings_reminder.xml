@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 알림창 -->
+    <string name="reminder_channel_name">쁘이 음성 알림·타이머</string>
+    <string name="reminder_channel_description">음성으로 등록한 알림과 타이머를 지정한 시각에 소리와 함께 알려줍니다.</string>
+    <string name="reminder_notification_title">쁘이 알림</string>
+    <string name="reminder_notification_timer">쁘이 타이머</string>
+
+    <!-- 음성 대답 -->
+    <string name="reminder_set">%1$s 알려드릴게요.</string>
+    <string name="reminder_timer_set">%1$s 타이머를 맞췄어요.</string>
+    <string name="reminder_ask_time">언제 알려드릴까요? 예를 들어 10분 뒤, 내일 아침 8시처럼 말씀해 주세요.</string>
+    <string name="reminder_ask_timer">몇 분 타이머를 맞출까요?</string>
+    <string name="reminder_ask_ampm">오전 %1$d시요, 오후 %1$d시요?</string>
+    <string name="reminder_past">말씀하신 시간은 이미 지났어요. 언제 알려드릴까요?</string>
+    <string name="reminder_time_unknown">시간을 알아듣지 못해 알림을 등록하지 않았어요. 다시 말씀해 주세요.</string>
+    <string name="reminder_cancelled">%1$s 알림을 취소했어요.</string>
+    <string name="reminder_timer_cancelled">타이머를 취소했어요.</string>
+    <string name="reminder_none">취소할 알림이 없어요.</string>
+    <string name="reminder_need_notifications">알림을 보내려면 알림 권한이 필요해요. 허용 화면을 열게요.</string>
+    <string name="reminder_notifications_off">알림 권한이 없어 알림을 등록하지 않았어요. 설정에서 쁘이의 알림을 허용해 주세요.</string>
+    <string name="reminder_notifications_blocked">쁘이의 알림이 꺼져 있어 알림을 등록하지 않았어요. 설정 &gt; 알림에서 쁘이 알림을 켜 주세요.</string>
+    <string name="reminder_need_exact">정해진 시각에 정확히 알리려면 \'알람 및 리마인더\' 허용이 필요해요. 설정 화면을 열게요. 허용하고 다시 말씀해 주세요.</string>
+    <string name="reminder_failed">알림을 등록하지 못했어요.</string>
+</resources>

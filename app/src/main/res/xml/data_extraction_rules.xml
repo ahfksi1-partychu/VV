@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android 12+ 클라우드 백업·기기 간 전송: 사용자 음성 녹음·호출어 모델은 제외한다. -->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="file" path="wakeword/" />
+        <exclude domain="file" path="wakeword.tmp/" />
+        <exclude domain="file" path="wakeword-retired/" />
+        <exclude domain="file" path="debug/" />
+        <exclude domain="file" path="measurements/" />
+        <!-- 주차 사진: 기기 밖으로 복사하지 않는다 (용량·사생활) -->
+        <exclude domain="file" path="parking_photos/" />
+        <!-- 동기화 로그인 정보·데이터 키: 이 기기의 Keystore로만 풀 수 있어 백업해도 쓸모없고, 기기 id가 겹치면 안 된다 -->
+        <exclude domain="sharedpref" path="drive_sync.xml" />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="file" path="wakeword/" />
+        <exclude domain="file" path="wakeword.tmp/" />
+        <exclude domain="file" path="wakeword-retired/" />
+        <exclude domain="file" path="debug/" />
+        <exclude domain="file" path="measurements/" />
+        <!-- 주차 사진: 기기 밖으로 복사하지 않는다 (용량·사생활) -->
+        <exclude domain="file" path="parking_photos/" />
+        <!-- 동기화 로그인 정보·데이터 키: 이 기기의 Keystore로만 풀 수 있어 백업해도 쓸모없고, 기기 id가 겹치면 안 된다 -->
+        <exclude domain="sharedpref" path="drive_sync.xml" />
+    </device-transfer>
+</data-extraction-rules>

@@ -1,0 +1,7 @@
+<resources>
+    <!-- 차량용과 구분되도록 앱 이름을 바꾼다 (홈 아이콘·메인 화면 제목) -->
+    <string name="app_name">쁘이</string>
+
+    <string name="phone_test_notice">폰 테스트 빌드 · 차량 기능 미지원 (주행 중 제한 검증 아님)</string>
+    <string name="phone_test_notice_on_car">폰 테스트 빌드가 차량 기기에서 실행 중입니다. 공모전·차량 검증에는 차량용(car) 빌드를 사용하세요.</string>
+</resources>

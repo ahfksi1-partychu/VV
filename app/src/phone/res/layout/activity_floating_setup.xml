@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 백그라운드 호출(플로팅) 설정 화면 (폰 테스트용) -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/floating_setup_title"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:alpha="0.85"
+            android:text="@string/floating_setup_intro"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/floatingStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- 필요 조건 4가지: 상태 + 버튼 -->
+        <LinearLayout style="@style/FloatingRow">
+            <TextView android:id="@+id/floatingModelState" style="@style/FloatingRowText" />
+            <Button android:id="@+id/floatingModelButton" style="@style/OverlayButton" android:text="@string/voice_register" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/FloatingRow">
+            <TextView android:id="@+id/floatingMicState" style="@style/FloatingRowText" />
+            <Button android:id="@+id/floatingMicButton" style="@style/OverlayButton" android:text="@string/mic_permission_allow" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/FloatingRow">
+            <TextView android:id="@+id/floatingNotifyState" style="@style/FloatingRowText" />
+            <Button android:id="@+id/floatingNotifyButton" style="@style/OverlayButton" android:text="@string/mic_permission_allow" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/FloatingRow">
+            <TextView android:id="@+id/floatingOverlayState" style="@style/FloatingRowText" />
+            <Button android:id="@+id/floatingOverlayButton" style="@style/OverlayButton" android:text="@string/notification_access_open" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/floatingToggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:minWidth="240dp"
+            android:minHeight="56dp"
+            android:textSize="18sp" />
+
+        <!-- 앱을 처음 열었을 때 자동으로 띄운 경우에만 표시 -->
+        <Button
+            android:id="@+id/floatingLater"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:minWidth="240dp"
+            android:minHeight="48dp"
+            android:text="@string/setup_flow_later"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:alpha="0.75"
+            android:text="@string/floating_setup_privacy"
+            android:textSize="14sp" />
+    </LinearLayout>
+</ScrollView>
