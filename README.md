@@ -10,7 +10,7 @@
 
 | 파일 | 대상 | 서명 |
 |---|---|---|
-| `apk/VV쁘이_car_release_UNSIGNED.apk` | **차량용 (공모전 제출 대상)**, Android Automotive / Pleos | **서명 없음.** 정식 release 키로 서명해야 설치할 수 있다 |
+| `apk/박효정_VV쁘이_release.apk` | **차량용 (공모전 제출 대상)**, Android Automotive / Pleos | 릴리스 키로 서명 (APK Signature Scheme v3, `apksigner verify` 통과) |
 | `apk/phone/VV쁘이_phone_debug_TEST_ONLY.apk` | 일반 Android 휴대폰 (참고·시험용) | 디버그 키. 제출용이 아니다 |
 
 - 두 APK는 같은 소스에서 빌드한 별도 flavor다. car는 `com.mycarhub`, phone은 `com.mycarhub.phone`이다.
@@ -58,7 +58,7 @@ apk/              제출용 APK
 ## 빌드
 
 - 필요: JDK 17, Android SDK 34
-- 차량용 release (서명 없음): `gradlew :app:assembleCarRelease`
+- 차량용 release: `gradlew :app:assembleCarRelease`로 서명 없는 APK를 만든 뒤 릴리스 키로 `apksigner sign` (키는 저장소에 없음)
 - 휴대폰 debug: `gradlew :app:assemblePhoneDebug`
 - 선택 설정은 `local.properties`에 넣는다. 이 파일은 저장소에 포함하지 않는다.
   - `supabase.url`, `supabase.anonKey`: 비어 있으면 동기화가 꺼진다.

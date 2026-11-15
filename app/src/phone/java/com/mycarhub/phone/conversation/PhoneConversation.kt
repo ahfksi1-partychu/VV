@@ -1598,14 +1598,23 @@ class PhoneConversation(
     private fun autoPlayFirstVideo(pkg: String, onDone: (Boolean?) -> Unit) {
         val handler = Handler(Looper.getMainLooper())
         var tries = 0
+        val tried = mutableSetOf<String>()
         val tap = object : Runnable {
             override fun run() {
                 val service = ScreenControlService.instance ?: return onDone(false)
-                val tapped = ScreenActions(service).tapFirstVideo(pkg)
+                val tapped = ScreenActions(service).tapFirstVideo(pkg, tried)
                 if (tapped != null) {
-                    Log.i(TAG, "youtube first video: tapped")
-                    watchYouTubeAds(pkg)
-                    verifyPlayback(pkg, onDone)
+                    tried += tapped
+                    Log.i(TAG, "youtube video candidate ${tried.size}: tapped")
+                    if (tried.size == 1) watchYouTubeAds(pkg)
+                    // 실제 재생 상태로 확인. 재생되지 않으면 검색 결과로 돌아가 다른 일반 영상 (최대 3개)
+                    verifyPlayback(pkg) { playing ->
+                        if (playing != false || tried.size >= YOUTUBE_MAX_CANDIDATES) return@verifyPlayback onDone(playing)
+                        Log.i(TAG, "youtube video candidate ${tried.size}: not playing, trying next")
+                        ScreenControlService.instance?.let { ScreenActions(it).back() } ?: return@verifyPlayback onDone(false)
+                        tries = 0
+                        handler.postDelayed(this, YOUTUBE_BACK_WAIT_MS)
+                    }
                 } else if (++tries < YOUTUBE_TAP_TRIES) {
                     handler.postDelayed(this, YOUTUBE_TAP_POLL_MS)
                 } else {
@@ -2018,7 +2027,9 @@ class PhoneConversation(
         private const val YOUTUBE_PLAY_CHECK_MS = 2_500L
         private const val AD_WATCH_MS = 60_000L
         private const val AD_POLL_MS = 1_500L
-        private const val YOUTUBE_VERIFY_TRIES = 6
+        private const val YOUTUBE_VERIFY_TRIES = 4
+        private const val YOUTUBE_MAX_CANDIDATES = 3
+        private const val YOUTUBE_BACK_WAIT_MS = 1_500L
         private const val AD_AWAY_LIMIT = 5
 
         /** 안내 소리만 듣고 끝난 인식을 다시 여는 최대 횟수 (그 뒤에도 말이 없으면 평소처럼 다시 묻는다) */

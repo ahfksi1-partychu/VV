@@ -238,7 +238,7 @@ class ScreenActions(private val service: ScreenControlService) {
      * 유튜브 검색 결과 화면에서 맨 위의 일반 영상(광고·Shorts 제외)을 누른다.
      * 화면이 아직 [packageName] 앱이 아니거나 영상 항목을 못 찾으면 false.
      */
-    fun tapFirstVideo(packageName: String): String? {
+    fun tapFirstVideo(packageName: String, tried: Set<String> = emptySet()): String? {
         val root = service.rootInActiveWindow ?: return null
         if (root.packageName?.toString() != packageName) return null
         val screen = Rect().also(root::getBoundsInScreen)
@@ -254,10 +254,29 @@ class ScreenActions(private val service: ScreenControlService) {
             val r = Rect().also(target::getBoundsInScreen)
             // 화면 위쪽 검색창·필터 줄은 건너뛴다
             if (r.isEmpty || r.top < screen.height() / 10) return@mapNotNull null
+            // 찾은 글자 노드뿐 아니라 실제로 누를 카드 전체(자식 포함, 소량)에 광고·스폰서 표시가 있는지 본다
+            if (hasExcludedLabel(target)) return@mapNotNull null
             Triple(target, r.top, desc)
-        }.distinctBy { boundsKey(it.first) }
-        val first = candidates.minByOrNull { it.second } ?: return null
-        return if (click(first.first)) first.third else null
+        }.distinctBy { boundsKey(it.first) }.sortedBy { it.second }
+        // 맨 위 결과는 광고성·추천 결과일 때가 많아 2번째 → 3번째 → 1번째 순으로 시도한다
+        val ordered = PREFERRED_ORDER.mapNotNull { candidates.getOrNull(it) } + candidates.drop(PREFERRED_ORDER.size)
+        val pick = ordered.firstOrNull { it.third !in tried } ?: return null
+        return if (click(pick.first)) pick.third else null
+    }
+
+    /** 카드(자식 몇 단계까지, 최대 [CARD_NODES]개)의 글자·설명에 제외 표시(광고·스폰서·Shorts·라이브·재생목록)가 있는지. */
+    private fun hasExcludedLabel(card: AccessibilityNodeInfo): Boolean {
+        val queue = ArrayDeque<Pair<AccessibilityNodeInfo, Int>>()
+        queue.add(card to 0)
+        var seen = 0
+        while (queue.isNotEmpty() && seen < CARD_NODES) {
+            val (node, depth) = queue.removeFirst()
+            seen++
+            val text = listOfNotNull(node.text, node.contentDescription).joinToString(" ").lowercase()
+            if (EXCLUDE_HINTS.any { text.contains(it) } || AD_BADGES.any { text.trim() == it }) return true
+            if (depth < CARD_DEPTH) for (i in 0 until node.childCount) node.getChild(i)?.let { queue.add(it to depth + 1) }
+        }
+        return false
     }
 
     /** 방금 누른 검색 결과 항목이 아직 화면에 있는지 (영상 화면으로 넘어갔으면 false). */
@@ -366,6 +385,11 @@ class ScreenActions(private val service: ScreenControlService) {
         /** 유튜브 공식 광고 건너뛰기 버튼 문구 (normalize 후) */
         private val SKIP_AD_LABELS = setOf("광고건너뛰기", "건너뛰기", "skipad", "skipads", "skip")
         private val SKIP_AD_SEARCH = listOf("건너뛰기", "Skip")
+        private val PREFERRED_ORDER = listOf(1, 2, 0)
+        private const val CARD_NODES = 40
+        private const val CARD_DEPTH = 3
+        /** 카드 안에 단독으로 붙는 광고 배지 글자 */
+        private val AD_BADGES = setOf("광고", "ad", "스폰서", "sponsored")
 
         private val SEARCH_WORDS = listOf("검색", "search", "찾기")
         private val SEARCH_EXACT = setOf("검색", "search", "검색하기")

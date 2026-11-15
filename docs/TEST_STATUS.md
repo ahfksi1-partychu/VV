@@ -5,7 +5,7 @@
 | 항목 | 결과 |
 |---|---|
 | 차량용 release 빌드 (`assembleCarRelease`) | 성공. versionName 0.3.0, minSdk 28, targetSdk 34 |
-| 차량용 release 서명 | **서명 없음.** `apksigner verify` 결과 "DOES NOT VERIFY" (Missing META-INF/MANIFEST.MF). 프로젝트에 release 서명키가 없다. 정식 키로 서명하기 전에는 설치할 수 없다 |
+| 차량용 release 서명 | `apk/박효정_VV쁘이_release.apk`: 새로 만든 릴리스 키(RSA 4096)로 서명. `apksigner verify` 통과 (v3 scheme, 서명자 1명, 인증서 SHA-256 `952f2664…92ffd`). 서명키는 저장소에 없다 |
 | 휴대폰용 debug 빌드 | 성공. 디버그 키로 서명됨 (제출용 아님) |
 
 ## 확인한 것
@@ -21,7 +21,7 @@
 
 ## 확인하지 않은 것
 
-- 서명한 차량용 release APK의 설치·실행 (서명키 없음)
+- 서명한 차량용 release APK의 설치·실행 (Pleos 에뮬레이터·실차에 설치해 보지 않음)
 - 실차(Pleos 차량)에서의 동작 전체
 - 호출어 3회 등록 버전의 차량 환경 인식률
 - 차량 ↔ 휴대폰 동기화 실서버 연동
